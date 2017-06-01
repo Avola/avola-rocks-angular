@@ -1,2 +1,14 @@
-<h1>Policy number</h1>
-<button (click)="onClick()">Go baby go</button>
+<div class="row">
+  <div class="col-md-12">
+    <h1>So you lost something?</h1>
+    <p>Before we can indemnify the costs we need your policy number</p>
+    <div class="card">
+      <div class="card-block text-nowrap">
+        <label for="typeahead-basic">Policy number:</label>
+        <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" />
+        <button class="btn btn-primary" (click)="getPolicy()">Go baby go!</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
