@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Rx';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Object } from './Object';
 import { Policy } from './Policy';
+import { FixedValues } from './FixedValues';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -12,6 +13,7 @@ export class DataService {
 
     public allObjects: Object[];
     public allPolicies: Policy[];
+    public fixedValues: FixedValues;
 
     constructor(private http: Http) { }
 
@@ -24,5 +26,6 @@ export class DataService {
     private ImportData(data: any) {
         this.allObjects = data.Objects;
         this.allPolicies = data.Policies;
+        this.fixedValues = data.FixedValues[0];
     }
 }
