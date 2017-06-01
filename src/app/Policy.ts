@@ -11,5 +11,6 @@ export class Policy {
     WorldCoverage: string;
     WinterSportsCoverageOption: string;
     FrissScore: string;
+    PremiumPaymentSituation: string;
     ClaimsPastYears: number;
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../data.service';
 import { RouterModule, Routes, Router } from '@angular/router';
+import { Policy } from '../../Policy';
 
 @Component({
   selector: 'travel-information',

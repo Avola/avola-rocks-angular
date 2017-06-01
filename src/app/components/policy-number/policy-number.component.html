@@ -4,8 +4,12 @@
     <div class="card-block text-nowrap">
       <div class="form-group row">
         <label for="policynumber">What is your travel policy number?</label>
-        <input id="policynumber" type="text" class="form-control" [(ngModel)]="policynumber" />
+        <input id="policynumber" type="number" class="form-control" [(ngModel)]="policynumber" />
       </div>
     </div>
-    <button class="btn btn-primary" (click)="getPolicy()">Travel information &raquo;</button> </div>
+    <div *ngIf="policyNumberNotFound" class="alert alert-danger" role="alert">
+      <strong>Oh snap!</strong> I think you made that number up.
+    </div>
+    <button [disabled]="policynumber == null" class="btn btn-primary" (click)="getPolicy()">Travel information &raquo;</button>
+  </div>
 </div>
