@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../data.service';
+import { RouterModule, Routes, Router } from '@angular/router';
 import { Policy } from '../../Policy';
 
 @Component({
@@ -10,8 +11,11 @@ export class TravelInformationComponent {
 
   title = 'Travel information';
 
+  constructor(private dataService: DataService, private router: Router) { }
 
-  constructor(private dataService: DataService) { }
+  public getIncidentInfo(): void {
+    this.router.navigate(['/incident-info']);
+  }
 
 }
 
