@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+.btn-primary{
+    color: #fff;
+    background-color: #f07d1a;
+    border-color:  #f07d1a;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #0a4a63;
+    border-color: #0a4a63;
+}
+
+.active[_ngcontent-c1] {
+    font-weight: bold;
+    color: black;
+    border-bottom-color: #f07d1a !important;
+}
