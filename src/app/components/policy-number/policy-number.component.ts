@@ -18,12 +18,10 @@ export class PolicyNumberComponent {
     //gevonden, onthou current policy + navigate to step 2
     console.log('objecten', this.dataService.allObjects);
     console.log('policies', this.dataService.allPolicies);
-<<<<<<< HEAD
+    console.log('fixed', this.dataService.fixedValues);
 
     this.router.navigate(['/travel-info']);
-=======
-    console.log('fixed', this.dataService.fixedValues);
->>>>>>> 91bd7bfef34e52f31827444530c9ec11714a999a
+
   }
 }
 
