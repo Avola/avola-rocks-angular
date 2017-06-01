@@ -15,6 +15,8 @@ export class DataService {
     public allPolicies: Policy[];
     public fixedValues: FixedValues;
 
+    public selectedPolicy: Policy = null;
+
     constructor(private http: Http) { }
 
     public getJSON(): void {

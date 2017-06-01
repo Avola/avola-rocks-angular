@@ -67,14 +67,14 @@
     },
     {
       "LuggageClaimObject": "Cosmetics",
-      "Brand": "Eye cream",
-      "Model": "La Prairie",
+      "Brand": "La Prairie",
+      "Model": "Eye cream",
       "ClaimObjectSalesValue": "341"
     },
     {
       "LuggageClaimObject": "Cosmetics",
-      "Brand": "Eye cream",
-      "Model": "Estee Lauder",
+      "Brand": "Estee Lauder",
+      "Model": "Eye cream",
       "ClaimObjectSalesValue": "215"
     }
   ],
@@ -91,6 +91,7 @@
       "WorldCoverage": "World Coverage",
       "WinterSportsCoverageOption": "Not Covered",
       "FrissScore": "Green",
+      "PremiumPaymentSituation": "Premium Payment Done",
       "ClaimsPastYears": "1"
     },
     {
@@ -106,6 +107,7 @@
       "WorldCoverage": "World Coverage",
       "WinterSportsCoverageOption": "Not Covered",
       "FrissScore": "Green",
+      "PremiumPaymentSituation": "Premium Payment Done",
       "ClaimsPastYears": "1"
     },
     {
@@ -121,6 +123,7 @@
       "WorldCoverage": "World Coverage",
       "WinterSportsCoverageOption": "Not Covered",
       "FrissScore": "Green",
+      "PremiumPaymentSituation": "Premium Payment Done",
       "ClaimsPastYears": "1"
     },
     {
@@ -136,6 +139,7 @@
       "WorldCoverage": "World Coverage",
       "WinterSportsCoverageOption": "Not Covered",
       "FrissScore": "Green",
+      "PremiumPaymentSituation": "Premium Payment Done",
       "ClaimsPastYears": "1"
     },
     {
@@ -151,6 +155,7 @@
       "WorldCoverage": "World Coverage",
       "WinterSportsCoverageOption": "Not Covered",
       "FrissScore": "Red",
+      "PremiumPaymentSituation": "Premium Payment Done",
       "ClaimsPastYears": "4"
     }
   ],

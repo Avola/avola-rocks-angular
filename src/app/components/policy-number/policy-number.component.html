@@ -7,5 +7,9 @@
         <input id="policynumber" type="text" class="form-control" [(ngModel)]="policynumber" />
       </div>
     </div>
-    <button class="btn btn-primary" (click)="getPolicy()">Travel information &raquo;</button> </div>
+    <div *ngIf="policyNumberNotFound" class="alert alert-danger" role="alert">
+      <strong>Oh snap!</strong> Change a few things up and try submitting again.
+    </div>
+    <button class="btn btn-primary" (click)="getPolicy()">Travel information &raquo;</button>
+  </div>
 </div>
