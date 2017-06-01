@@ -11,25 +11,39 @@
       <div class="form-group row">
         <label for="travel-startdate" class="col-12 col-form-label">What was the start date of your travel?</label>
         <div class="col-8">
-          <input class="form-control" type="search" value="" id="travel-startdate">
+          <input class="form-control" type="date" value="" id="travel-startdate">
         </div>
       </div>
       <div class="form-group row">
         <label for="travel-enddate" class="col-12 col-form-label">What was the end date of your travel?</label>
         <div class="col-8">
-          <input class="form-control" type="email" value="" id="travel-enddate">
+          <input class="form-control" type="date" value="" id="travel-enddate">
         </div>
       </div>
       <div class="form-group row">
-        <label for="winter-sports-travel" class="col-12 col-form-label">Are you practicing winter sports during your travel?</label>
-        <div class="col-8">
-          <input class="form-control" type="url" value="" id="winter-sports-travel">
-        </div>
+        <fieldset class="form-group col-8">
+          <legend>Did you practice winter sports during your travel?</legend>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                Yes, i did
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                No, i didn't
+            </label>
+          </div>
+        </fieldset>
       </div>
       <div class="form-group row">
         <label for="travel-destination-country" class="col-12 col-form-label">Which country did you travel to?</label>
         <div class="col-8">
-          <input class="form-control" type="url" value="" id="travel-destination-country">
+          <select class="form-control" type="url" value="" id="travel-destination-country">
+            <option>Belgium</option>
+            <option>Netherland</option>
+          </select>
         </div>
       </div>
     </div>
