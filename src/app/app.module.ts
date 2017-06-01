@@ -4,18 +4,18 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { FormWizardModule } from 'angular2-wizard';
+import { PolicyNumberComponent } from './components/policy-number/policy-number.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PolicyNumberComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    FormWizardModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
