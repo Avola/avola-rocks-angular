@@ -21,5 +21,8 @@
         </div>
       </div>
     </div>
-    <button class="btn btn-primary" (click)="getPolicy()">Objects &raquo;</button> </div>
+    <div *ngIf="notCovered" class="alert alert-warning" role="alert">
+      Sorry, looks like you are not covered for this time!
+    </div>
+    <button class="btn btn-primary" (click)="checkCoverage()">Objects &raquo;</button> </div>
 </div>
