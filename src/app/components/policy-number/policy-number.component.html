@@ -1,14 +1,11 @@
 <div class="row">
   <div class="col-md-12">
-    <h1>So you lost something?</h1>
-    <p>Before we can indemnify the costs we need your policy number</p>
-    <div class="card">
-      <div class="card-block text-nowrap">
-        <label for="typeahead-basic">Policy number:</label>
-        <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" />
-        <button class="btn btn-primary" (click)="getPolicy()">Go baby go!</button>
+    <h2>Something bad happened on your vacation?</h2>
+    <div class="card-block text-nowrap">
+      <div class="form-group row">
+        <label for="policynumber">Before we can indemnify the costs we need your policy number:</label>
+        <input id="policynumber" type="text" class="form-control" [(ngModel)]="policynumber" />
       </div>
     </div>
-  </div>
+    <button class="btn btn-primary" (click)="getPolicy()">Travel information &raquo;</button> </div>
 </div>
- 

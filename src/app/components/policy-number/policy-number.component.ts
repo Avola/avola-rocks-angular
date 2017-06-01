@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../data.service';
+import { RouterModule, Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'policy-number',
@@ -9,13 +10,15 @@ export class PolicyNumberComponent {
 
   title = 'Policy number';
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private router: Router) { }
 
   public getPolicy(): void {
     //leeg of niet gevonden, geef een mooie melding -> bootstrap alert
     //gevonden, onthou current policy + navigate to step 2
     console.log('objecten', this.dataService.allObjects);
     console.log('policies', this.dataService.allPolicies);
+
+    this.router.navigate(['/travel-info']);
   }
 }
 
