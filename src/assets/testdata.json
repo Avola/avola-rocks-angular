@@ -1,0 +1,28 @@
+{
+    "Objects": [
+        {
+            "Luggage Claim Object": "Laptop",
+            "Brand": "HP",
+            "Model": "Pavillion 15",
+            "Claim Object Sales Value": "499"
+        }
+    ],
+
+    "Policies": [
+        {
+            "Policy Number": "10111213",
+            "Claim Number": "",
+            "Name": "Lambrecht",
+            "Address": "Beekstraat 127 A",
+            "Postal Code": "1970",
+            "City": "Wezembeek-Oppem",
+            "Country": "Belgium",
+            "Claim Duration": "Continuous",
+            "Status": "Found",
+            "World Coverage": "World Coverage",
+            "Winter Sports Coverage Option": "Not Covered",
+            "Friss Score": "Green",
+            "Claims past years": "1"
+        }
+    ]
+}

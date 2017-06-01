@@ -1,32 +1,23 @@
 import { Component } from '@angular/core';
+import { DataService } from './data.service';
+import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [DataService]
 })
-export class AppComponent {
-  title = 'Avola Rocks!!!';
+export class AppComponent implements OnInit {
 
-  public onStep1Next(ev): void {
-    console.log("clicked 1");
+  data: string;
+  allData: any;
+
+  ngOnInit(): void {
+    this.dataService.getJSON();
   }
 
-  public onStep2Next(ev): void {
-    console.log("clicked 2");
-  }
-
-  public onStep3Next(ev): void {
-    console.log("clicked 3");
-  }
-
-  public onStep4Next(ev): void {
-    console.log("clicked 4");
-  }
-
-    public onComplete(ev): void {
-    console.log("Completed");
-  }
+  constructor(private dataService: DataService) { }
 }
 
 
