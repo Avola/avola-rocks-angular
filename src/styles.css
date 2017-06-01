@@ -4,6 +4,12 @@
     background-color: #f07d1a;
     border-color:  #f07d1a;
 }
+.btn-primary:disabled {
+    background-color: #eceeef;
+    border-color: #eceeef;
+    color: black;
+}
+
 .btn-primary:hover {
     color: #fff;
     background-color: #0a4a63;

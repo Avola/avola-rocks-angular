@@ -12,7 +12,7 @@ export class PolicyNumberComponent {
   title = 'Policy number';
   policynumber: string;
   policyNumberNotFound = false;
-
+  
   constructor(private dataService: DataService, private router: Router) { }
 
 
