@@ -1,28 +1,170 @@
 {
-    "Objects": [
-        {
-            "Luggage Claim Object": "Laptop",
-            "Brand": "HP",
-            "Model": "Pavillion 15",
-            "Claim Object Sales Value": "499"
-        }
-    ],
+  "Objects": [{
+      "LuggageClaimObject": "Laptop",
+      "Brand": "HP",
+      "Model": "Pavillion 15",
+      "ClaimObjectSalesValue": "499"
+    },
+    {
+      "LuggageClaimObject": "Laptop",
+      "Brand": "HP",
+      "Model": "Pavillion Touchsmart 15",
+      "ClaimObjectSalesValue": "529"
+    },
+    {
+      "LuggageClaimObject": "Laptop",
+      "Brand": "HP",
+      "Model": "Notebook 15",
+      "ClaimObjectSalesValue": "640"
+    },
+    {
+      "LuggageClaimObject": "Laptop",
+      "Brand": "HP",
+      "Model": "Omen 15",
+      "ClaimObjectSalesValue": "1050"
+    },
+    {
+      "LuggageClaimObject": "Laptop",
+      "Brand": "Dell",
+      "Model": "Vostro 3568",
+      "ClaimObjectSalesValue": "422"
+    },
+    {
+      "LuggageClaimObject": "Laptop",
+      "Brand": "Dell",
+      "Model": "Lattitude E5570",
+      "ClaimObjectSalesValue": "966"
+    },
+    {
+      "LuggageClaimObject": "Laptop",
+      "Brand": "Dell",
+      "Model": "Precision 77105",
+      "ClaimObjectSalesValue": "2965"
+    },
+    {
+      "LuggageClaimObject": "Laptop",
+      "Brand": "Lenovo",
+      "Model": "Ideapad Y700",
+      "ClaimObjectSalesValue": "930"
+    },
+    {
+      "LuggageClaimObject": "Laptop",
+      "Brand": "Lenovo",
+      "Model": "Thinkpad L460",
+      "ClaimObjectSalesValue": "920"
+    },
+    {
+      "LuggageClaimObject": "Laptop",
+      "Brand": "Lenovo",
+      "Model": "Ideapad 100S",
+      "ClaimObjectSalesValue": "279"
+    },
+    {
+      "LuggageClaimObject": "Money",
+      "Brand": "",
+      "Model": "",
+      "ClaimObjectSalesValue": ""
+    },
+    {
+      "LuggageClaimObject": "Cosmetics",
+      "Brand": "Eye cream",
+      "Model": "La Prairie",
+      "ClaimObjectSalesValue": "341"
+    },
+    {
+      "LuggageClaimObject": "Cosmetics",
+      "Brand": "Eye cream",
+      "Model": "Estee Lauder",
+      "ClaimObjectSalesValue": "215"
+    }
+  ],
+  "Policies": [{
+      "PolicyNumber": "10111213",
+      "ClaimNumber": "",
+      "Name": "Lambrecht",
+      "Address": "Beekstraat 127 A",
+      "PostalCode": "1970",
+      "City": "Wezembeek-Oppem",
+      "Country": "Belgium",
+      "ClaimDuration": "Continuous",
+      "Status": "Found",
+      "WorldCoverage": "World Coverage",
+      "WinterSportsCoverageOption": "Not Covered",
+      "FrissScore": "Green",
+      "ClaimsPastYears": "1"
+    },
+    {
+      "PolicyNumber": "10111214",
+      "ClaimNumber": "",
+      "Name": "Gelissen",
+      "Address": "Wielderslaan 14",
+      "PostalCode": "6132BR",
+      "City": "Sittard",
+      "Country": "The Netherlands",
+      "ClaimDuration": "Continuous",
+      "Status": "Found",
+      "WorldCoverage": "World Coverage",
+      "WinterSportsCoverageOption": "Not Covered",
+      "FrissScore": "Green",
+      "ClaimsPastYears": "1"
+    },
+    {
+      "PolicyNumber": "10111215",
+      "ClaimNumber": "",
+      "Name": "Mertens",
+      "Address": "Driesstraat 11",
+      "PostalCode": "3078",
+      "City": "Everberg",
+      "Country": "Belgium",
+      "ClaimDuration": "Continuous",
+      "Status": "Found",
+      "WorldCoverage": "World Coverage",
+      "WinterSportsCoverageOption": "Not Covered",
+      "FrissScore": "Green",
+      "ClaimsPastYears": "1"
+    },
+    {
+      "PolicyNumber": "10111216",
+      "ClaimNumber": "",
+      "Name": "DeLandsheer",
+      "Address": "Dorpstraat 15",
+      "PostalCode": "2077",
+      "City": "Mechelen",
+      "Country": "Belgium",
+      "ClaimDuration": "Short Term",
+      "Status": "NotFound",
+      "WorldCoverage": "World Coverage",
+      "WinterSportsCoverageOption": "Not Covered",
+      "FrissScore": "Green",
+      "ClaimsPastYears": "1"
+    },
+    {
+      "PolicyNumber": "10111217",
+      "ClaimNumber": "",
+      "Name": "Dupon",
+      "Address": "St.Janstraat",
+      "PostalCode": "1072 AB",
+      "City": "Amsterdam",
+      "Country": "The Netherlands",
+      "ClaimDuration": "Short Term",
+      "Status": "Found",
+      "WorldCoverage": "World Coverage",
+      "WinterSportsCoverageOption": "Not Covered",
+      "FrissScore": "Red",
+      "ClaimsPastYears": "4"
+    }
+  ],
 
-    "Policies": [
-        {
-            "Policy Number": "10111213",
-            "Claim Number": "",
-            "Name": "Lambrecht",
-            "Address": "Beekstraat 127 A",
-            "Postal Code": "1970",
-            "City": "Wezembeek-Oppem",
-            "Country": "Belgium",
-            "Claim Duration": "Continuous",
-            "Status": "Found",
-            "World Coverage": "World Coverage",
-            "Winter Sports Coverage Option": "Not Covered",
-            "Friss Score": "Green",
-            "Claims past years": "1"
-        }
-    ]
+  "FixedValues": [{
+    "AccommodationPaid": "Paid",
+    "AccommodationType": "NotFixedSeasonalStand",
+    "DrivingWithoutDriversLicense": "NoDrivingWithoutDriversLicense",
+    "ForeseeableDamageorCosts": "NotForeseeable",
+    "War,RiotsorMolest": "NoWar,NoRiotsnorMolest",
+    "TravelClaimPersonPresentinPolicy": "Present",
+    "CarelessUseofLuggageClaimObject": "NoCarelessUse",
+    "DamagetoLodging": "NoDamagetoLodging",
+    "InsuredPersonLiableforLuggageClaimObject": "Liable",
+    "LuggageClaimObjectSupervision": "DirectSupervision"
+  }]
 }
