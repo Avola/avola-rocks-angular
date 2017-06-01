@@ -24,7 +24,5 @@ export class DataService {
     private ImportData(data: any) {
         this.allObjects = data.Objects;
         this.allPolicies = data.Policies;
-        console.log('policies', this.allPolicies);
-        console.log('objects', this.allObjects);
     }
 }
