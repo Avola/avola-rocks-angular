@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DataService } from '../../data.service';
+import { RouterModule, Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'travel-information',
@@ -9,7 +10,11 @@ export class TravelInformationComponent {
 
   title = 'Travel information';
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private router: Router) { }
+
+  public getIncidentInfo(): void {
+    this.router.navigate(['/incident-info']);
+  }
 
 }
 

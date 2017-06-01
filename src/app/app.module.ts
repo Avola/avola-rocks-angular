@@ -6,13 +6,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { PolicyNumberComponent } from './components/policy-number/policy-number.component';
 import { TravelInformationComponent } from './components/travel-information/travel-information.component';
+import { IncidentInformationComponent } from './components/incident-information/incident-information.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     PolicyNumberComponent,
-    TravelInformationComponent
+    TravelInformationComponent,
+    IncidentInformationComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +29,10 @@ import { RouterModule } from '@angular/router';
       {
         path: 'travel-info',
         component: TravelInformationComponent
+      },
+      {
+        path: 'incident-info',
+        component: IncidentInformationComponent
       }
     ])
   ],
