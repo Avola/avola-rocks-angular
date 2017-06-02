@@ -39,6 +39,10 @@
         </fieldset>
       </div>
     </div>
-    <button class="btn btn-primary" (click)="nextDetail()">Next &raquo;</button>
+    <div *ngIf="notCovered" class="alert alert-warning" role="alert">
+      Sorry, we don't cover this object, please continue.
+    </div>
+    <button *ngIf="notCovered" class="btn btn-primary" (click)="nextObject()">Proceed &raquo;</button>
+    <button *ngIf="!notCovered" class="btn btn-primary" (click)="checkCoverage()">Next &raquo;</button>
   </div>
 </div>

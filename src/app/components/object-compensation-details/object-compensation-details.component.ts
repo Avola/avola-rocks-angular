@@ -19,8 +19,11 @@ export class ObjectCompensationDetailsComponent implements OnInit {
 
     public nextDetail(moreItems: boolean): void {
         this.dataService.currentObject++;
-        if (moreItems) {
+        if (this.dataService.Objects.length - 1 > this.dataService.currentObject) {
             this.router.navigate(['/object-details']);
+        }
+        else {
+            //go to final pay amount
         }
     }
 }
