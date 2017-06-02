@@ -51,9 +51,9 @@ export class ObjectDetailsComponent implements OnInit {
         });
     }
 
-    public nextObject(moreItems: boolean){
+    public nextObject(){
         this.dataService.currentObject++;
-        if (moreItems) {
+        if (this.dataService.Objects.length - 1 > this.dataService.currentObject) {
             this.router.navigate(['/object-details']);
         }
         else {
