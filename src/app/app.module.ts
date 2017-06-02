@@ -11,6 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RouterModule } from '@angular/router';
 import { ObjectSelectionComponent } from './components/object-selection/object-selection.component';
 import { ObjectDetailsComponent } from './components/object-details/object-details.component';
+import { ObjectCompensationDetailsComponent } from './components/object-compensation-details/object-compensation-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ObjectDetailsComponent } from './components/object-details/object-detai
     IncidentInformationComponent,
     LoginComponent,
     ObjectSelectionComponent,
-    ObjectDetailsComponent
+    ObjectDetailsComponent,
+    ObjectCompensationDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +53,10 @@ import { ObjectDetailsComponent } from './components/object-details/object-detai
       {
         path: 'object-details',
         component: ObjectDetailsComponent
+      },
+      {
+        path: 'object-compensation-details',
+        component: ObjectCompensationDetailsComponent
       }
     ])
   ],
