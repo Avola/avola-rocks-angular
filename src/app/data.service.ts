@@ -15,7 +15,7 @@ export class DataService {
     public allObjects: Object[];
     public allPolicies: Policy[];
     public fixedValues: FixedValues;
-
+    public Objects: string[] = [];
     public checkPolicyCoverage: CheckPolicyCoverage = new CheckPolicyCoverage();
     public selectedPolicy: Policy = null;
 

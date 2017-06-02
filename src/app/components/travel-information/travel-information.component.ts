@@ -21,7 +21,6 @@ export class TravelInformationComponent implements OnInit{
   constructor(private dataService: DataService, private router: Router) { }
 
   public getIncidentInfo(): void {
-    console.log('checkPolicyCoverage', this.dataService.checkPolicyCoverage);
     this.router.navigate(['/incident-info']);
   }
 

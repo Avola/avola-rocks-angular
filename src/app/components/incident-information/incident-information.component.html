@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="form-group row">
-                <fieldset class="form-group col-12">
+        <fieldset class="form-group col-12">
           <label>Was the reported incident caused by a crime or an attempt to crime</label>
           <div class="form-check">
             <label class="form-check-label">
@@ -30,7 +30,6 @@
             </label>
           </div>
         </fieldset>
-        </div>
       </div>
       <div class="form-group row">
         <label for="sport-practiced" class="col-12 col-form-label">Were you practicing any of the following sports during the incident? If so, indicate which.</label>
@@ -38,6 +37,7 @@
           <select class="form-control" type="url" value="" id="travel-destination-country" [(ngModel)]="dataService.checkPolicyCoverage.SportPracticed"> </select>
         </div>
       </div>
+    </div>
     <div *ngIf="notCovered" class="alert alert-warning" role="alert">
       Sorry, looks like you are not covered for this time!
     </div>
