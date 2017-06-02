@@ -11,7 +11,7 @@ import { Object } from '../../Classes/Object';
 export class ObjectDetailsComponent implements OnInit {
 
     ngOnInit(): void {
-        this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectinHandLuggage = "Not in Hand Luggage";
+        this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectinHandLuggage = 'Not in Hand Luggage';
         this.dataService.luggageClaimObjectCoverage.LuggageClaimObject
             = this.dataService.Objects[this.dataService.currentObject].LuggageClaimObject;
         this.dataService.luggageClaimObjectCoverage.PolicyNumber = this.dataService.selectedPolicy.PolicyNumber.toString();
@@ -21,7 +21,7 @@ export class ObjectDetailsComponent implements OnInit {
     }
 
     public nextDetail(): void {
-        let current = this.dataService.Objects[this.dataService.currentObject];
+        const current = this.dataService.Objects[this.dataService.currentObject];
         for (let i = 0; i < this.dataService.allObjects.length; i++) {
             if (current.LuggageClaimObject === this.dataService.allObjects[i].LuggageClaimObject &&
                 current.Brand === this.dataService.allObjects[i].Brand && current.Model === this.dataService.allObjects[i].Model) {
@@ -29,7 +29,10 @@ export class ObjectDetailsComponent implements OnInit {
                 break;
             }
         }
-        this.dataService.currentObject++;
+        // this.dataService.currentObject++;
+        this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectLocation = '';
+        this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectinHandLuggage = 'Not in Hand Luggage';
+        this.router.navigate(['/object-compensation-details']);
     }
 }
 

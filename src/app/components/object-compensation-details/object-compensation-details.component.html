@@ -1,0 +1,67 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>Detailed information of {{dataService.Objects[dataService.currentObject].LuggageClaimObject}}</h2>
+    <div class="card-block text-nowrap">
+      <div class="form-group row">
+        <label for="claim-object-date" class="col-12 col-form-label">What was the purchase date of the object?</label>
+        <div class="col-12">
+          <input class="form-control" type="date" value="" id="claim-object-date">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="claim-object-value" class="col-12 col-form-label">What was the original purchase value of the claim object?</label>
+        <div class="col-12">
+          <input class="form-control" type="number" value="" id="claim-object-value">
+        </div>
+      </div>
+      <div class="form-group row">
+        <fieldset class="form-group col-12">
+          <label>Was the claim object repaired after the incident?</label>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="objectRepairRadioButton" value="Repair">
+                Yes, it was
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="objectRepairRadioButton" value="No Repair">
+                No, it wasn't'
+            </label>
+          </div>
+        </fieldset>
+      </div>
+      <div class="form-group row">
+        <label for="claim-object-repair" class="col-12 col-form-label">What was the repair cost?</label>
+        <div class="col-12">
+          <input class="form-control" type="number" value="" id="claim-object-repair">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="claim-object-persons" class="col-12 col-form-label">What was the total number of insured persons in your travel?</label>
+        <div class="col-12">
+          <input class="form-control" type="number" value="" id="claim-object-persons">
+        </div>
+      </div>
+      <div class="form-group row">
+        <fieldset class="form-group col-12">
+          <label>Was the claim object opened before the incident?</label>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="objectOpenedRadioButton" value="Opened">
+                Yes, it was
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="objectOpenedRadioButton" value="Not Opened">
+                No, it wasn't'
+            </label>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <button *ngIf="dataService.Objects.length - 1 > dataService.currentObject" class="btn btn-primary" (click)="nextDetail(true)">Next object &raquo;</button>
+    <button *ngIf="dataService.Objects.length - 1 <= dataService.currentObject" class="btn btn-primary" (click)="nextDetail(false)">Proceed &raquo;</button>
+  </div>
+</div>
