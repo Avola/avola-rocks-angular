@@ -14,6 +14,7 @@ export class ObjectDetailsComponent implements OnInit {
         this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectinHandLuggage = "Not in Hand Luggage";
         this.dataService.luggageClaimObjectCoverage.LuggageClaimObject
             = this.dataService.Objects[this.dataService.currentObject].LuggageClaimObject;
+        this.dataService.luggageClaimObjectCoverage.PolicyNumber = this.dataService.selectedPolicy.PolicyNumber.toString();
     }
 
     constructor(private dataService: DataService, private router: Router) {

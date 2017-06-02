@@ -1,4 +1,5 @@
 export class LuggageClaimObjectCoverage {
+    PolicyNumber: string;
     CarelessUseofLuggageClaimObject: string;
     DamagetoLodging: string;
     InsuredPersonLiableforLuggageClaimObject: string;

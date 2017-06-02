@@ -23,6 +23,11 @@ export class AvolaClientService {
             .map(this.extractData);
     }
 
+    checkObjectCoverage(obj: Object): Observable<Object> {
+            return this.http.post(this.baseUrl + '/Travel/checkobjectcoverage', obj, this.options)
+            .map(this.extractData);
+    }
+
     private extractData(res: Response) {
         let body = res.json();
         console.log(body);
