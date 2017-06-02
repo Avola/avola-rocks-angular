@@ -1,60 +1,60 @@
 {
   "Objects": [{
-      "LuggageClaimObject": "Laptop",
+      "LuggageClaimObject": "Laptop Computer",
       "Brand": "HP",
       "Model": "Pavillion 15",
       "ClaimObjectSalesValue": "499"
     },
     {
-      "LuggageClaimObject": "Laptop",
+      "LuggageClaimObject": "Laptop Computer",
       "Brand": "HP",
       "Model": "Pavillion Touchsmart 15",
       "ClaimObjectSalesValue": "529"
     },
     {
-      "LuggageClaimObject": "Laptop",
+      "LuggageClaimObject": "Laptop Computer",
       "Brand": "HP",
       "Model": "Notebook 15",
       "ClaimObjectSalesValue": "640"
     },
     {
-      "LuggageClaimObject": "Laptop",
+      "LuggageClaimObject": "Laptop Computer",
       "Brand": "HP",
       "Model": "Omen 15",
       "ClaimObjectSalesValue": "1050"
     },
     {
-      "LuggageClaimObject": "Laptop",
+      "LuggageClaimObject": "Laptop Computer",
       "Brand": "Dell",
       "Model": "Vostro 3568",
       "ClaimObjectSalesValue": "422"
     },
     {
-      "LuggageClaimObject": "Laptop",
+      "LuggageClaimObject": "Laptop Computer",
       "Brand": "Dell",
       "Model": "Lattitude E5570",
       "ClaimObjectSalesValue": "966"
     },
     {
-      "LuggageClaimObject": "Laptop",
+      "LuggageClaimObject": "Laptop Computer",
       "Brand": "Dell",
       "Model": "Precision 77105",
       "ClaimObjectSalesValue": "2965"
     },
     {
-      "LuggageClaimObject": "Laptop",
+      "LuggageClaimObject": "Laptop Computer",
       "Brand": "Lenovo",
       "Model": "Ideapad Y700",
       "ClaimObjectSalesValue": "930"
     },
     {
-      "LuggageClaimObject": "Laptop",
+      "LuggageClaimObject": "Laptop Computer",
       "Brand": "Lenovo",
       "Model": "Thinkpad L460",
       "ClaimObjectSalesValue": "920"
     },
     {
-      "LuggageClaimObject": "Laptop",
+      "LuggageClaimObject": "Laptop Computer",
       "Brand": "Lenovo",
       "Model": "Ideapad 100S",
       "ClaimObjectSalesValue": "279"
