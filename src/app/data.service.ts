@@ -7,6 +7,7 @@ import { Policy } from './Classes/Policy';
 import { FixedValues } from './Classes/FixedValues';
 import { CheckPolicyCoverage } from './Classes/CheckPolicyCoverage';
 import { LuggageClaimObjectCoverage } from './Classes/LuggageClaimObjectCoverage';
+import { LuggageClaimObjectCalculatedCompensationAmount } from './Classes/LuggageClaimObjectCalculatedCompensationAmount';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -21,6 +22,11 @@ export class DataService {
     public selectedPolicy: Policy = null;
     public currentObject = 0;
     public luggageClaimObjectCoverage: LuggageClaimObjectCoverage = new LuggageClaimObjectCoverage();
+    public luggageClaimObjectCalculatedCompensationAmount: LuggageClaimObjectCalculatedCompensationAmount
+        = new LuggageClaimObjectCalculatedCompensationAmount();
+
+    public listLuggageClaimObjectCoverage: LuggageClaimObjectCoverage[] = [];
+    public listLuggageClaimObjectCalculatedCompensationAmount: LuggageClaimObjectCalculatedCompensationAmount[] = [];
 
     constructor(private http: Http) { }
 

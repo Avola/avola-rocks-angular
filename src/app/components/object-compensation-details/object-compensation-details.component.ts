@@ -3,6 +3,7 @@ import { DataService } from '../../data.service';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { OnInit } from '@angular/core';
 import { Object } from '../../Classes/Object';
+import { LuggageClaimObjectCalculatedCompensationAmount } from '../../Classes/LuggageClaimObjectCalculatedCompensationAmount';
 
 @Component({
     selector: 'object-compensation-details',
@@ -11,7 +12,8 @@ import { Object } from '../../Classes/Object';
 export class ObjectCompensationDetailsComponent implements OnInit {
 
     ngOnInit(): void {
-
+        this.dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectRepair = 'No Repair';
+        this.dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectOpened = 'Not Opened';
     }
 
     constructor(private dataService: DataService, private router: Router) {
@@ -19,7 +21,15 @@ export class ObjectCompensationDetailsComponent implements OnInit {
 
     public nextDetail(moreItems: boolean): void {
         this.dataService.currentObject++;
+        this.dataService.listLuggageClaimObjectCalculatedCompensationAmount
+            .push(this.dataService.luggageClaimObjectCalculatedCompensationAmount);
         if (moreItems) {
+            this.dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectPurchaseDate = null;
+            this.dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectPurchaseValue = null;
+            this.dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectRepairValue = null;
+            this.dataService.luggageClaimObjectCalculatedCompensationAmount.TravelNumberofInsuredPersons = null;
+            this.dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectRepair = 'No Repair';
+            this.dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectOpened = 'Not Opened';
             this.router.navigate(['/object-details']);
         }
     }

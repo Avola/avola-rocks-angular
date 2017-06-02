@@ -14,6 +14,8 @@ export class ObjectDetailsComponent implements OnInit {
         this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectinHandLuggage = 'Not in Hand Luggage';
         this.dataService.luggageClaimObjectCoverage.LuggageClaimObject
             = this.dataService.Objects[this.dataService.currentObject].LuggageClaimObject;
+        this.dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObject
+            = this.dataService.Objects[this.dataService.currentObject].LuggageClaimObject;
         this.dataService.luggageClaimObjectCoverage.PolicyNumber = this.dataService.selectedPolicy.PolicyNumber.toString();
     }
 
@@ -25,10 +27,12 @@ export class ObjectDetailsComponent implements OnInit {
         for (let i = 0; i < this.dataService.allObjects.length; i++) {
             if (current.LuggageClaimObject === this.dataService.allObjects[i].LuggageClaimObject &&
                 current.Brand === this.dataService.allObjects[i].Brand && current.Model === this.dataService.allObjects[i].Model) {
-                this.dataService.Objects[this.dataService.currentObject] = this.dataService.allObjects[i];
+                this.dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectCurrentSalesValue
+                    = this.dataService.allObjects[i].ClaimObjectSalesValue.toString();
                 break;
             }
         }
+        this.dataService.listLuggageClaimObjectCoverage.push(this.dataService.luggageClaimObjectCoverage);
         // this.dataService.currentObject++;
         this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectLocation = '';
         this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectinHandLuggage = 'Not in Hand Luggage';
