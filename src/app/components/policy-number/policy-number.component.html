@@ -3,8 +3,8 @@
     <h2>So you have a claim for us?</h2>
     <div class="card-block text-nowrap">
       <div class="form-group row">
-        <label for="policynumber">What is your travel policy number?</label>
-        <input id="policynumber" type="number" class="form-control" [(ngModel)]="policynumber" />
+        <label for="policynumber">Is this the correct policy number?</label>
+        <input id="policynumber" type="number" disabled class="form-control" [(ngModel)]="policynumber" />
       </div>
     </div>
     <div *ngIf="policyNumberNotFound" class="alert alert-danger" role="alert">
