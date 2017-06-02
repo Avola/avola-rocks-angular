@@ -30,29 +30,35 @@ export class ObjectDetailsComponent implements OnInit {
         this.avolaclient.checkObjectCoverage(this.dataService.luggageClaimObjectCoverage).subscribe((coverage) => {
             if (coverage != null) {
                 if (coverage === 'Not Covered') {
-                  this.notCovered = true;
+                    this.notCovered = true;
                 } else {
-                const current = this.dataService.Objects[this.dataService.currentObject];
-                for (let i = 0; i < this.dataService.allObjects.length; i++) {
-                    if (current.LuggageClaimObject === this.dataService.allObjects[i].LuggageClaimObject &&
-                        current.Brand === this.dataService.allObjects[i].Brand && current.Model === this.dataService.allObjects[i].Model) {
-                        this.dataService.Objects[this.dataService.currentObject] = this.dataService.allObjects[i];
-                        break;
+                    const current = this.dataService.Objects[this.dataService.currentObject];
+                    for (let i = 0; i < this.dataService.allObjects.length; i++) {
+                        if (current.LuggageClaimObject === this.dataService.allObjects[i].LuggageClaimObject &&
+                            current.Brand === this.dataService.allObjects[i].Brand && current.Model
+                            === this.dataService.allObjects[i].Model) {
+                            this.dataService.Objects[this.dataService.currentObject] = this.dataService.allObjects[i];
+                            break;
+                        }
                     }
+                    // this.dataService.currentObject++;
+                    this.dataService.listLuggageClaimObjectCoverage.push(this.dataService.luggageClaimObjectCoverage);
+                    this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectLocation = '';
+                    this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectinHandLuggage = 'Not in Hand Luggage';
+                    this.router.navigate(['/object-compensation-details']);
+                    // }
                 }
-                // this.dataService.currentObject++;
-                      this.dataService.listLuggageClaimObjectCoverage.push(this.dataService.luggageClaimObjectCoverage);
-                this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectLocation = '';
-                this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectinHandLuggage = 'Not in Hand Luggage';
-                this.router.navigate(['/object-compensation-details']);
-                // }
             }
-            }
+            console.log("Objects 2", this.dataService.Objects);
+            console.log("current", this.dataService.currentObject);
         });
     }
 
-    public nextObject(){
+    public nextObject() {
+        this.notCovered = false;
         this.dataService.currentObject++;
+        this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectLocation = '';
+        this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectinHandLuggage = 'Not in Hand Luggage';
         if (this.dataService.Objects.length - 1 > this.dataService.currentObject) {
             this.router.navigate(['/object-details']);
         }

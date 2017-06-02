@@ -29,6 +29,7 @@ export class ObjectSelectionComponent implements OnInit {
     }
 
     public gatherObjectInformation(): void {
+        console.log('Objects', this.dataService.Objects);
         this.router.navigate(['/object-details']);
     }
 }
