@@ -26,7 +26,9 @@ export class IncidentInformationComponent implements OnInit {
         // if (coverage === 'Not Covered') {
         //   this.notCovered = true;
         // } else {
-          this.router.navigate(['/object-selection']);
+        this.dataService.luggageClaimObjectCalculatedCompensationAmount.TravelClaimEventDate
+          = this.dataService.checkPolicyCoverage.TravelClaimEventDate;
+        this.router.navigate(['/object-selection']);
         // }
       }
     });

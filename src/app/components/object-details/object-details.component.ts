@@ -17,11 +17,14 @@ export class ObjectDetailsComponent implements OnInit {
         this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectinHandLuggage = 'Not in Hand Luggage';
         this.dataService.luggageClaimObjectCoverage.LuggageClaimObject
             = this.dataService.Objects[this.dataService.currentObject].LuggageClaimObject;
+        this.dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObject
+            = this.dataService.Objects[this.dataService.currentObject].LuggageClaimObject;
         this.dataService.luggageClaimObjectCoverage.PolicyNumber = this.dataService.selectedPolicy.PolicyNumber.toString();
     }
 
     constructor(private dataService: DataService, private router: Router, private avolaclient: AvolaClientService) {
     }
+
 
     public checkCoverage() {
         this.avolaclient.checkObjectCoverage(this.dataService.luggageClaimObjectCoverage).subscribe((coverage) => {
@@ -38,6 +41,7 @@ export class ObjectDetailsComponent implements OnInit {
                     }
                 }
                 // this.dataService.currentObject++;
+                      this.dataService.listLuggageClaimObjectCoverage.push(this.dataService.luggageClaimObjectCoverage);
                 this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectLocation = '';
                 this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectinHandLuggage = 'Not in Hand Luggage';
                 this.router.navigate(['/object-compensation-details']);
@@ -51,6 +55,9 @@ export class ObjectDetailsComponent implements OnInit {
         this.dataService.currentObject++;
         if (moreItems) {
             this.router.navigate(['/object-details']);
+        }
+        else {
+            //go to final page
         }
     }
 }
