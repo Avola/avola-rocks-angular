@@ -5,6 +5,13 @@
       <div class="form-group row">
         <label for="luggage-claim-cause" class="col-12 col-form-label">What caused the incident? </label>
         <div class="col-12">
+          <select class="form-control" type="url" value="" [(ngModel)]="dataService.luggageClaimObjectCoverage.LuggageClaimCause">
+            <option>Damage</option>
+            <option>Lost</option>
+            <option>Theft</option>
+          </select>
+        </div>
+        <div class="col-12">
           <input class="form-control" type="text" value="" id="luggage-claim-cause">
         </div>
       </div>

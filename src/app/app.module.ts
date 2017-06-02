@@ -10,6 +10,7 @@ import { IncidentInformationComponent } from './components/incident-information/
 import { LoginComponent } from './components/login/login.component';
 import { RouterModule } from '@angular/router';
 import { ObjectSelectionComponent } from './components/object-selection/object-selection.component';
+import { ObjectDetailsComponent } from './components/object-details/object-details.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ObjectSelectionComponent } from './components/object-selection/object-s
     TravelInformationComponent,
     IncidentInformationComponent,
     LoginComponent,
-    ObjectSelectionComponent
+    ObjectSelectionComponent,
+    ObjectDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,10 @@ import { ObjectSelectionComponent } from './components/object-selection/object-s
       {
         path: 'object-selection',
         component: ObjectSelectionComponent
+      }, 
+      {
+        path: 'object-details',
+        component: ObjectDetailsComponent
       }
     ])
   ],

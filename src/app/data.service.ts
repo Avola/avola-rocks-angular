@@ -6,6 +6,7 @@ import { Object } from './Classes/Object';
 import { Policy } from './Classes/Policy';
 import { FixedValues } from './Classes/FixedValues';
 import { CheckPolicyCoverage } from './Classes/CheckPolicyCoverage';
+import { LuggageClaimObjectCoverage } from './Classes/LuggageClaimObjectCoverage';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -15,9 +16,11 @@ export class DataService {
     public allObjects: Object[];
     public allPolicies: Policy[];
     public fixedValues: FixedValues;
-    public Objects: string[] = [];
+    public Objects: Object[] = [];
     public checkPolicyCoverage: CheckPolicyCoverage = new CheckPolicyCoverage();
     public selectedPolicy: Policy = null;
+    public currentObject = 0;
+    public luggageClaimObjectCoverage: LuggageClaimObjectCoverage = new LuggageClaimObjectCoverage();
 
     constructor(private http: Http) { }
 

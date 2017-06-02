@@ -17,11 +17,6 @@ export class LoginComponent {
 
 
   public Login(): void {
-    // leeg of niet gevonden, geef een mooie melding -> bootstrap alert
-    // gevonden, onthou current policy + navigate to step 2
-    console.log('objecten', this.dataService.allObjects);
-    console.log('policies', this.dataService.allPolicies);
-    console.log('fixed', this.dataService.fixedValues);
 
     let foundPolicy = null;
 

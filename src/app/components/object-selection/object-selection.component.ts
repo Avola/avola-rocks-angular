@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DataService } from '../../data.service';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { OnInit } from '@angular/core';
+import { Object } from '../../Classes/Object';
 
 @Component({
     selector: 'object-selection',
@@ -9,7 +10,7 @@ import { OnInit } from '@angular/core';
 })
 export class ObjectSelectionComponent implements OnInit {
 
-    public object: string;
+    public object: Object = new Object();
 
     ngOnInit(): void {
     }
@@ -18,13 +19,17 @@ export class ObjectSelectionComponent implements OnInit {
     }
 
     public keyPressed(keyCode: any): void {
-        if(keyCode == 13 && this.object != null && this.object != '') {
+        if(keyCode == 13 && this.object.LuggageClaimObject != null && this.object.LuggageClaimObject != "") {
             this.dataService.Objects.push(this.object);
-            this.object = '';
+            this.object = new Object();
         }
     }
-    public removeObject(item: string, index: number): void {
+    public removeObject(item: any, index: number): void {
         this.dataService.Objects.splice(index, 1);
+    }
+
+    public gatherObjectInformation(): void {
+        this.router.navigate(['/object-details']);
     }
 }
 
