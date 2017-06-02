@@ -3,59 +3,59 @@
     <h2>Hi {{dataService.selectedPolicy.Name}}, tell us a bit about your trip!</h2>
     <div class="card-block text-nowrap">
       <div class="form-group row">
+        <label for="travel-startdate" class="col-12 col-form-label">What was the start date of your travel?</label>
+        <div class="col-12">
+          <input class="form-control" type="date" value="" id="travel-startdate" [(ngModel)]="dataService.checkPolicyCoverage.TravelStartDate">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="travel-enddate" class="col-12 col-form-label">What was the end date of your travel?</label>
+        <div class="col-12">
+          <input class="form-control" type="date" value="" id="travel-enddate" [(ngModel)]="dataService.checkPolicyCoverage.TravelEndDate">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="travel-destination-country" class="col-12 col-form-label">Which country did you travel to?</label>
+        <div class="col-12">
+          <select class="form-control" type="url" value="" id="travel-destination-country" [(ngModel)]="dataService.checkPolicyCoverage.TravelDestinationCountry">
+            <option>Belgium</option>
+            <option>Netherland</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
         <fieldset class="form-group col-12">
-        <label>Are you travelling for business?</label>
+          <label>Are you travelling for business?</label>
           <div class="form-check">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+              <input type="radio" class="form-check-input" name="businessTravelRadioButton" value="Business Travel" [(ngModel)]="dataService.checkPolicyCoverage.BusinessTravel">
                 Yes, i am
             </label>
           </div>
           <div class="form-check">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+              <input type="radio" class="form-check-input" name="businessTravelRadioButton" value="No Business Travel" [(ngModel)]="dataService.checkPolicyCoverage.BusinessTravel">
                 No, i am not
             </label>
           </div>
         </fieldset>
       </div>
       <div class="form-group row">
-        <label for="travel-startdate" class="col-12 col-form-label">What was the start date of your travel?</label>
-        <div class="col-12">
-          <input class="form-control" type="date" value="" id="travel-startdate">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="travel-enddate" class="col-12 col-form-label">What was the end date of your travel?</label>
-        <div class="col-12">
-          <input class="form-control" type="date" value="" id="travel-enddate">
-        </div>
-      </div>
-      <div class="form-group row">
         <fieldset class="form-group col-12">
           <label>Did you practice winter sports during your travel?</label>
           <div class="form-check">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+              <input type="radio" class="form-check-input" name="winterSportsRadioButton" value="Winter Sports" [(ngModel)]="dataService.checkPolicyCoverage.WinterSportsTravel">
                 Yes, i did
             </label>
           </div>
           <div class="form-check">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+              <input type="radio" class="form-check-input" name="winterSportsRadioButton" value="No Winter Sports" [(ngModel)]="dataService.checkPolicyCoverage.WinterSportsTravel">
                 No, i didn't
             </label>
           </div>
         </fieldset>
-      </div>
-      <div class="form-group row">
-        <label for="travel-destination-country" class="col-12 col-form-label">Which country did you travel to?</label>
-        <div class="col-12">
-          <select class="form-control" type="url" value="" id="travel-destination-country">
-            <option>Belgium</option>
-            <option>Netherland</option>
-          </select>
-        </div>
       </div>
     </div>
     <button class="btn btn-primary" (click)="getIncidentInfo()">Incident &raquo;</button> </div>

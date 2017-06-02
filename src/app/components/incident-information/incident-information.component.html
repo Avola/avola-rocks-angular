@@ -3,24 +3,41 @@
     <h2>Tell us more about the incident, please.</h2>
     <div class="card-block text-nowrap">
       <div class="form-group row">
-        <label for="travel-claim-event-date" class="col-12 col-form-label">When did the incident take place?</label>
+        <label for="luggage-claim-cause" class="col-12 col-form-label">What caused the incident? </label>
         <div class="col-12">
-          <input class="form-control" type="text" value="" id="travel-claim-event-date">
+          <input class="form-control" type="text" value="" id="luggage-claim-cause">
         </div>
       </div>
       <div class="form-group row">
-        <label for="crime" class="col-12 col-form-label">Was the reported incident caused by a crime or an attempt to crime?</label>
+        <label for="travel-claim-event-date" class="col-12 col-form-label">When did the incident take place?</label>
         <div class="col-12">
-          <input class="form-control" type="search" value="" id="crime">
+          <input class="form-control" type="date" value="" id="travel-claim-event-date" [(ngModel)]="dataService.checkPolicyCoverage.TravelClaimEventDate">
+        </div>
+      </div>
+      <div class="form-group row">
+                <fieldset class="form-group col-12">
+          <label>Was the reported incident caused by a crime or an attempt to crime</label>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="crimeRadioButton" value="Crime or Attempt to Crime" [(ngModel)]="dataService.checkPolicyCoverage.CrimeorAttempttoCrime">
+                Yes, they tried to steal it
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="crimeRadioButton" value="No Crime or Attempt to Crime" [(ngModel)]="dataService.checkPolicyCoverage.CrimeorAttempttoCrime">
+                No, they didn't try to steal it'
+            </label>
+          </div>
+        </fieldset>
         </div>
       </div>
       <div class="form-group row">
         <label for="sport-practiced" class="col-12 col-form-label">Were you practicing any of the following sports during the incident? If so, indicate which.</label>
         <div class="col-12">
-          <input class="form-control" type="email" value="" id="sport-practiced">
+          <select class="form-control" type="url" value="" id="travel-destination-country" [(ngModel)]="dataService.checkPolicyCoverage.SportPracticed"> </select>
         </div>
       </div>
-    </div>
     <div *ngIf="notCovered" class="alert alert-warning" role="alert">
       Sorry, looks like you are not covered for this time!
     </div>
