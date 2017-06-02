@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { PolicyNumberComponent } from './components/policy-number/policy-number.component';
 import { TravelInformationComponent } from './components/travel-information/travel-information.component';
 import { IncidentInformationComponent } from './components/incident-information/incident-information.component';
+import {LoginComponent } from './components/login/login.component';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
@@ -14,7 +15,8 @@ import { RouterModule } from '@angular/router';
     AppComponent,
     PolicyNumberComponent,
     TravelInformationComponent,
-    IncidentInformationComponent
+    IncidentInformationComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +26,10 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([
       {
         path: '',
+        component: LoginComponent
+      },
+       {
+        path: 'policy-number',
         component: PolicyNumberComponent
       },
       {

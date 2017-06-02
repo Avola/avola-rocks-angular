@@ -2,6 +2,8 @@ export class Policy {
     PolicyNumber: number;
     ClaimNumber: number;
     Name: string;
+    UserName: string;
+    Password: string;
     Address: string;
     PostalCode: number;
     City: string;
