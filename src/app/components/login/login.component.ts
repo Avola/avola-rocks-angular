@@ -12,7 +12,7 @@ export class LoginComponent {
   username: string;
   password: string;
   userNotFound = false;
-  
+
   constructor(private dataService: DataService, private router: Router) { }
 
 

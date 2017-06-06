@@ -81,7 +81,7 @@
   "Policies": [{
       "PolicyNumber": "10111213",
       "ClaimNumber": "",
-      "Name": "Lambrecht",
+      "Name": "Mr. Lambrecht",
       "UserName": "lambrecht@avo.la",
       "Password": "Avola123",
       "Address": "Beekstraat 127 A",
@@ -99,7 +99,7 @@
     {
       "PolicyNumber": "10111214",
       "ClaimNumber": "",
-      "Name": "Gelissen",
+      "Name": "Mr. Gelissen",
       "UserName": "gelissen@avo.la",
       "Password": "Avola123",
       "Address": "Wielderslaan 14",
@@ -117,7 +117,7 @@
     {
       "PolicyNumber": "10111215",
       "ClaimNumber": "",
-      "Name": "Mertens",
+      "Name": "Mr. Mertens",
       "UserName": "mertens@avo.la",
       "Password": "Avola123",
       "Address": "Driesstraat 11",
@@ -135,7 +135,7 @@
     {
       "PolicyNumber": "10111216",
       "ClaimNumber": "",
-      "Name": "DeLandsheer",
+      "Name": "Miss. DeLandsheer",
       "UserName": "delandsheer@avo.la",
       "Password": "Avola123",
       "Address": "Dorpstraat 15",
@@ -153,7 +153,7 @@
     {
       "PolicyNumber": "10111217",
       "ClaimNumber": "",
-      "Name": "Dupon",
+      "Name": "Mr. Dupon",
       "UserName": "dupon@avo.la",
       "Password": "Avola123",
       "Address": "St.Janstraat",

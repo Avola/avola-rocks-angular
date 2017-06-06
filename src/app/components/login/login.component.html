@@ -1,17 +1,26 @@
-<div class="row">
-  <div class="col-md-12">
-    <h2>Login</h2>
-    <div class="card-block text-nowrap">
-      <div class="form-group row">
-        <label for="username">Username</label>
-        <input id="username" type="text" class="form-control" [(ngModel)]="username" />
-        <label for="password">Password</label>
-        <input id="password" type="password" class="form-control" [(ngModel)]="password" />
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container" id="header">
+    <h1 class="display-4">Avola Rocks: Claim handling</h1>
+    <!--<p><a class="btn btn-primary btn-lg" href="http://www.avo.la" target="blank" role="button">Learn more about Avola &raquo;</a></p>-->
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Login</h2>
+      <div class="card-block text-nowrap">
+        <div class="form-group row">
+          <label for="username">Username</label>
+          <input id="username" type="text" class="form-control" [(ngModel)]="username" />
+          <label for="password">Password</label>
+          <input id="password" type="password" class="form-control" [(ngModel)]="password"  />
+        </div>
       </div>
+      <div *ngIf="userNotFound" class="alert alert-danger" role="alert">
+        <strong>Oh snap!</strong> We couldn't find you or the password/username is wrong.
+      </div>
+      <button id="login" class="btn btn-primary" [disabled]="username == null && password == null" class="btn btn-primary" (click)="Login()">Login &raquo;</button>
     </div>
-    <div *ngIf="userNotFound" class="alert alert-danger" role="alert">
-      <strong>Oh snap!</strong> We couldn't find you or the password/username is wrong.
-    </div>
-    <button [disabled]="username == null && password == null" class="btn btn-primary" (click)="Login()">Login &raquo;</button>
   </div>
 </div>

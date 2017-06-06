@@ -1,48 +1,56 @@
-<div class="row">
-  <div class="col-md-12">
-    <h2>Information of {{dataService.Objects[dataService.currentObject].LuggageClaimObject}}</h2>
-    <div class="card-block text-nowrap">
-      <div class="form-group row">
-        <label for="claim-object-brand" class="col-12 col-form-label">What was the brand name and model of the object?</label>
-        <div class="col-12">
-          <input class="form-control" type="text" value="" id="claim-object-brand" placeholder="Brand" [(ngModel)]="dataService.Objects[dataService.currentObject].Brand">
+<div class="jumbotron" style="padding:0px">
+  <div class="container" id="smallheader">
+    <img src="/assets/avolaairportsmall.png" />
+    <h1 class="display-4">Avola Rocks: Claim handling</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Information of {{dataService.Objects[dataService.currentObject].LuggageClaimObject}}</h2>
+      <div class="card-block text-nowrap">
+        <div class="form-group row">
+          <label for="claim-object-brand" class="col-12 col-form-label">What was the brand name and model of the object?</label>
+          <div class="col-12">
+            <input class="form-control" type="text" value="" id="claim-object-brand" placeholder="Brand" [(ngModel)]="dataService.Objects[dataService.currentObject].Brand">
+          </div>
+          <div class="col-12">
+            <input class="form-control" type="text" value="" id="claim-object-model" placeholder="Model" [(ngModel)]="dataService.Objects[dataService.currentObject].Model">
+          </div>
         </div>
-        <div class="col-12">
-          <input class="form-control" type="text" value="" id="claim-object-model" placeholder="Model" [(ngModel)]="dataService.Objects[dataService.currentObject].Model">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label class="col-12 col-form-label">Where was the object located at the time of the incident?</label>
-        <div class="col-12">
-          <select class="form-control" type="url" value="" [(ngModel)]="dataService.luggageClaimObjectCoverage.LuggageClaimObjectLocation">
+        <div class="form-group row">
+          <label class="col-12 col-form-label">Where was the object located at the time of the incident?</label>
+          <div class="col-12">
+            <select class="form-control" type="url" value="" [(ngModel)]="dataService.luggageClaimObjectCoverage.LuggageClaimObjectLocation">
             <option>Car</option>
             <option>Airplane</option>
             <option>Bus</option>
           </select>
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <fieldset class="form-group col-12">
-          <label>Was the object placed in your hand luggage at the time of the incident?</label>
-          <div class="form-check">
-            <label class="form-check-label">
+        <div class="form-group row">
+          <fieldset class="form-group col-12">
+            <label>Was the object placed in your hand luggage at the time of the incident?</label>
+            <div class="form-check">
+              <label class="form-check-label">
               <input type="radio" class="form-check-input" name="objectInHandRadioButton" value="In Hand Luggage" [(ngModel)]="dataService.luggageClaimObjectCoverage.LuggageClaimObjectinHandLuggage">
                 Yes, it was
             </label>
-          </div>
-          <div class="form-check">
-            <label class="form-check-label">
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
               <input type="radio" class="form-check-input" name="objectInHandRadioButton" value="Not in Hand Luggage" [(ngModel)]="dataService.luggageClaimObjectCoverage.LuggageClaimObjectinHandLuggage">
                 No, it wasn't'
             </label>
-          </div>
-        </fieldset>
+            </div>
+          </fieldset>
+        </div>
       </div>
+      <div *ngIf="notCovered" class="alert alert-warning" role="alert">
+        Sorry, we don't cover this object, please continue.
+      </div>
+      <button *ngIf="notCovered" class="btn btn-primary" (click)="nextObject()">Proceed &raquo;</button>
+      <button *ngIf="!notCovered" class="btn btn-primary" (click)="checkCoverage()">Next &raquo;</button>
     </div>
-    <div *ngIf="notCovered" class="alert alert-warning" role="alert">
-      Sorry, we don't cover this object, please continue.
-    </div>
-    <button *ngIf="notCovered" class="btn btn-primary" (click)="nextObject()">Proceed &raquo;</button>
-    <button *ngIf="!notCovered" class="btn btn-primary" (click)="checkCoverage()">Next &raquo;</button>
   </div>
 </div>

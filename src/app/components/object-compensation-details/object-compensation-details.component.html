@@ -1,67 +1,75 @@
-<div class="row">
-  <div class="col-md-12">
-    <h2>Detailed information of {{dataService.Objects[dataService.currentObject].LuggageClaimObject}}</h2>
-    <div class="card-block text-nowrap">
-      <div class="form-group row">
-        <label for="claim-object-date" class="col-12 col-form-label">What was the purchase date of the object?</label>
-        <div class="col-12">
-          <input class="form-control" type="date" value="" id="claim-object-date" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectPurchaseDate">
+<div class="jumbotron" style="padding:0px">
+  <div class="container" id="smallheader">
+    <img src="/assets/avolaairportsmall.png" />
+    <h1 class="display-4">Avola Rocks: Claim handling</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Detailed information of {{dataService.Objects[dataService.currentObject].LuggageClaimObject}}</h2>
+      <div class="card-block text-nowrap">
+        <div class="form-group row">
+          <label for="claim-object-date" class="col-12 col-form-label">What was the purchase date of the object?</label>
+          <div class="col-12">
+            <input class="form-control" type="date" value="" id="claim-object-date" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectPurchaseDate">
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="claim-object-value" class="col-12 col-form-label">What was the original purchase value of the claim object?</label>
-        <div class="col-12">
-          <input class="form-control" type="number" value="" id="claim-object-value" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectPurchaseValue">
+        <div class="form-group row">
+          <label for="claim-object-value" class="col-12 col-form-label">What was the original purchase value of the claim object?</label>
+          <div class="col-12">
+            <input class="form-control" type="number" value="" id="claim-object-value" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectPurchaseValue">
+          </div>
         </div>
-      </div>
-      <div *ngIf="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObject == 'Laptop Computer'" class="form-group row">
-        <fieldset class="form-group col-12">
-          <label>Was the claim object repaired after the incident?</label>
-          <div class="form-check">
-            <label class="form-check-label">
+        <div *ngIf="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObject == 'Laptop Computer'" class="form-group row">
+          <fieldset class="form-group col-12">
+            <label>Was the claim object repaired after the incident?</label>
+            <div class="form-check">
+              <label class="form-check-label">
               <input type="radio" class="form-check-input" name="objectRepairRadioButton" value="Repair" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectRepair">
                 Yes, it was
             </label>
-          </div>
-          <div class="form-check">
-            <label class="form-check-label">
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
               <input type="radio" class="form-check-input" name="objectRepairRadioButton" value="No Repair" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectRepair">
                 No, it wasn't'
             </label>
+            </div>
+          </fieldset>
+        </div>
+        <div *ngIf="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectRepair == 'Repair'" class="form-group row">
+          <label for="claim-object-repair" class="col-12 col-form-label">What was the repair cost?</label>
+          <div class="col-12">
+            <input class="form-control" type="number" value="" id="claim-object-repair" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectRepairValue">
           </div>
-        </fieldset>
-      </div>
-      <div *ngIf="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectRepair == 'Repair'" class="form-group row">
-        <label for="claim-object-repair" class="col-12 col-form-label">What was the repair cost?</label>
-        <div class="col-12">
-          <input class="form-control" type="number" value="" id="claim-object-repair" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectRepairValue">
         </div>
-      </div>
-      <div *ngIf="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObject == 'Money'" class="form-group row">
-        <label for="claim-object-persons" class="col-12 col-form-label">What was the total number of insured persons in your travel?</label>
-        <div class="col-12">
-          <input class="form-control" type="number" value="" id="claim-object-persons" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.TravelNumberofInsuredPersons">
+        <div *ngIf="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObject == 'Money'" class="form-group row">
+          <label for="claim-object-persons" class="col-12 col-form-label">What was the total number of insured persons in your travel?</label>
+          <div class="col-12">
+            <input class="form-control" type="number" value="" id="claim-object-persons" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.TravelNumberofInsuredPersons">
+          </div>
         </div>
-      </div>
-      <div *ngIf="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObject == 'Cosmetics'" class="form-group row">
-        <fieldset class="form-group col-12">
-          <label>Was the claim object opened before the incident?</label>
-          <div class="form-check">
-            <label class="form-check-label">
+        <div *ngIf="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObject == 'Cosmetics'" class="form-group row">
+          <fieldset class="form-group col-12">
+            <label>Was the claim object opened before the incident?</label>
+            <div class="form-check">
+              <label class="form-check-label">
               <input type="radio" class="form-check-input" name="objectOpenedRadioButton" value="Opened" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectOpened">
                 Yes, it was
             </label>
-          </div>
-          <div class="form-check">
-            <label class="form-check-label">
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
               <input type="radio" class="form-check-input" name="objectOpenedRadioButton" value="Not Opened" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectOpened">
                 No, it wasn't'
             </label>
-          </div>
-        </fieldset>
+            </div>
+          </fieldset>
+        </div>
       </div>
+      <button *ngIf="dataService.Objects.length - 1 > dataService.currentObject" class="btn btn-primary" (click)="nextDetail(true)">Next object &raquo;</button>
+      <button *ngIf="dataService.Objects.length - 1 <= dataService.currentObject" class="btn btn-primary" (click)="nextDetail(false)">Proceed &raquo;</button>
     </div>
-    <button *ngIf="dataService.Objects.length - 1 > dataService.currentObject" class="btn btn-primary" (click)="nextDetail(true)">Next object &raquo;</button>
-    <button *ngIf="dataService.Objects.length - 1 <= dataService.currentObject" class="btn btn-primary" (click)="nextDetail(false)">Proceed &raquo;</button>
   </div>
 </div>

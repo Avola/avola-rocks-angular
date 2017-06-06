@@ -1,15 +1,24 @@
-<div class="row">
-  <div class="col-md-12">
-    <h2>So you have a claim for us?</h2>
-    <div class="card-block text-nowrap">
-      <div class="form-group row">
-        <label for="policynumber">Is this the correct policy number?</label>
-        <input id="policynumber" type="number" disabled class="form-control" [(ngModel)]="policynumber" />
-      </div>
-    </div>
-    <div *ngIf="policyNumberNotFound" class="alert alert-danger" role="alert">
-      <strong>Oh snap!</strong> I think you made that number up.
-    </div>
-    <button [disabled]="policynumber == null" class="btn btn-primary" (click)="getPolicy()">Travel information &raquo;</button>
+<div class="jumbotron" style="padding:0px" >
+  <div class="container" id="smallheader">
+    <img src="/assets/avolaairportsmall.png" />
+    <h1 class="display-4">Avola Rocks: Claim handling</h1>
   </div>
 </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>So you have a claim for us?</h2>
+      <div class="card-block text-nowrap">
+        <div class="form-group row">
+          <label for="policynumber">We found the following policy number</label>
+          <input id="policynumber" type="number" disabled class="form-control" [(ngModel)]="policynumber" />
+        </div>
+      </div>
+      <div *ngIf="policyNumberNotFound" class="alert alert-danger" role="alert">
+        <strong>Oh snap!</strong> I think you made that number up.
+      </div>
+      <button [disabled]="policynumber == null" class="btn btn-primary" (click)="getPolicy()">Provide travel information &raquo;</button>
+    </div>
+  </div>
+</div>
+

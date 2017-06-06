@@ -1,49 +1,57 @@
-<div class="row">
-  <div class="col-md-12">
-    <h2>Tell us more about the incident, please.</h2>
-    <div class="card-block text-nowrap">
-      <div class="form-group row">
-        <label class="col-12 col-form-label">What caused the incident? </label>
-        <div class="col-12">
-          <select class="form-control" type="url" value="" [(ngModel)]="dataService.luggageClaimObjectCoverage.LuggageClaimCause">
+<div class="jumbotron" style="padding:0px">
+  <div class="container" id="smallheader">
+    <img src="/assets/avolaairportsmall.png" />
+    <h1 class="display-4">Avola Rocks: Claim handling</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Tell us more about the incident, please.</h2>
+      <div class="card-block text-nowrap">
+        <div class="form-group row">
+          <label class="col-12 col-form-label">What caused the incident? </label>
+          <div class="col-12">
+            <select class="form-control" type="url" value="" [(ngModel)]="dataService.luggageClaimObjectCoverage.LuggageClaimCause">
             <option>Damage</option>
             <option>Lost</option>
             <option>Theft</option>
           </select>
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="travel-claim-event-date" class="col-12 col-form-label">When did the incident take place?</label>
-        <div class="col-12">
-          <input class="form-control" type="date" value="" id="travel-claim-event-date" [(ngModel)]="dataService.checkPolicyCoverage.TravelClaimEventDate">
+        <div class="form-group row">
+          <label for="travel-claim-event-date" class="col-12 col-form-label">When did the incident take place?</label>
+          <div class="col-12">
+            <input class="form-control" type="date" value="" id="travel-claim-event-date" [(ngModel)]="dataService.checkPolicyCoverage.TravelClaimEventDate">
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <fieldset class="form-group col-12">
-          <label>Was the reported incident caused by a crime or an attempt to crime</label>
-          <div class="form-check">
-            <label class="form-check-label">
+        <div class="form-group row">
+          <fieldset class="form-group col-12">
+            <label>Was the reported incident caused by a crime or an attempt to crime</label>
+            <div class="form-check">
+              <label class="form-check-label">
               <input type="radio" class="form-check-input" name="crimeRadioButton" value="Crime or Attempt to Crime" [(ngModel)]="dataService.checkPolicyCoverage.CrimeorAttempttoCrime">
                 Yes, they tried to steal it
             </label>
-          </div>
-          <div class="form-check">
-            <label class="form-check-label">
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
               <input type="radio" class="form-check-input" name="crimeRadioButton" value="No Crime or Attempt to Crime" [(ngModel)]="dataService.checkPolicyCoverage.CrimeorAttempttoCrime">
                 No, they didn't try to steal it'
             </label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="form-group row">
+          <label for="sport-practiced" class="col-12 col-form-label">Were you practicing any of the following sports during the incident? If so, indicate which.</label>
+          <div class="col-12">
+            <select class="form-control" type="url" value="" id="travel-destination-country" [(ngModel)]="dataService.checkPolicyCoverage.SportPracticed"> </select>
           </div>
-        </fieldset>
-      </div>
-      <div class="form-group row">
-        <label for="sport-practiced" class="col-12 col-form-label">Were you practicing any of the following sports during the incident? If so, indicate which.</label>
-        <div class="col-12">
-          <select class="form-control" type="url" value="" id="travel-destination-country" [(ngModel)]="dataService.checkPolicyCoverage.SportPracticed"> </select>
         </div>
       </div>
-    </div>
-    <div *ngIf="notCovered" class="alert alert-warning" role="alert">
-      Sorry, looks like you are not covered for this time!
-    </div>
-    <button class="btn btn-primary" (click)="checkCoverage()">Objects &raquo;</button> </div>
+      <div *ngIf="notCovered" class="alert alert-warning" role="alert">
+        Sorry, looks like you are not covered for this time!
+      </div>
+      <button class="btn btn-primary" (click)="checkCoverage()">Define objects &raquo;</button> </div>
+  </div>
 </div>
