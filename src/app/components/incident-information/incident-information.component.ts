@@ -29,7 +29,7 @@ export class IncidentInformationComponent implements OnInit {
           this.dataService.luggageClaimObjectCalculatedCompensationAmount.TravelClaimEventDate
             = this.dataService.checkPolicyCoverage.TravelClaimEventDate;
           this.router.navigate(['/object-selection']);
-        //}
+        // }
       }
     });
   }
