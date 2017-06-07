@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { ObjectSelectionComponent } from './components/object-selection/object-selection.component';
 import { ObjectDetailsComponent } from './components/object-details/object-details.component';
 import { ObjectCompensationDetailsComponent } from './components/object-compensation-details/object-compensation-details.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ObjectCompensationDetailsComponent } from './components/object-compensa
     LoginComponent,
     ObjectSelectionComponent,
     ObjectDetailsComponent,
-    ObjectCompensationDetailsComponent
+    ObjectCompensationDetailsComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,7 @@ import { ObjectCompensationDetailsComponent } from './components/object-compensa
       {
         path: 'object-selection',
         component: ObjectSelectionComponent
-      }, 
+      },
       {
         path: 'object-details',
         component: ObjectDetailsComponent
@@ -57,6 +59,10 @@ import { ObjectCompensationDetailsComponent } from './components/object-compensa
       {
         path: 'object-compensation-details',
         component: ObjectCompensationDetailsComponent
+      },
+      {
+        path: 'admin',
+        component: AdminComponent
       }
     ])
   ],
