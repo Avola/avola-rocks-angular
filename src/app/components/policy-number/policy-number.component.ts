@@ -18,7 +18,6 @@ export class PolicyNumberComponent {
     }
   }
 
-
   public getPolicy(): void {
     let foundPolicy = null;
 
@@ -34,6 +33,10 @@ export class PolicyNumberComponent {
     } else {
       this.policyNumberNotFound = true;
     }
+  }
+
+  public goToAdmin(): void {
+    this.router.navigate(['/admin']);
   }
 }
 
