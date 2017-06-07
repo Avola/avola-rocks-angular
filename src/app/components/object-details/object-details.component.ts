@@ -49,8 +49,6 @@ export class ObjectDetailsComponent implements OnInit {
                     // }
                 }
             }
-            console.log("Objects 2", this.dataService.Objects);
-            console.log("current", this.dataService.currentObject);
         });
     }
 
