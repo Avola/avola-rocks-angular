@@ -47,7 +47,7 @@ export class DataService {
         this.avolaclient.listAllDecisions().subscribe((response) => {
             console.log('decisions', response);
             this.allDecisions = response;
-            this.mapDecisions();
+            // this.mapDecisions();
         });
     }
 
