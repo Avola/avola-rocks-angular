@@ -13,7 +13,9 @@ export class PolicyNumberComponent {
   policyNumberNotFound = false;
 
   constructor(private dataService: DataService, private router: Router) {
-    this.policynumber = dataService.selectedPolicy.PolicyNumber;
+    if (dataService.selectedPolicy) {
+      this.policynumber = dataService.selectedPolicy.PolicyNumber;
+    }
   }
 
 
