@@ -5,29 +5,33 @@
   </div>
 </div>
 <div class="container">
-<div class="row">
-  <div class="col-md-12">
-    <h2>You are covered by the policy</h2>
-    <div class="card-block text-nowrap">
-      <div class="form-group row">
-        <label for="claim-object" class="col-12 col-form-label">Which objects were stolen, damaged or lost?</label>
-        <div class="col-12">
-          <input class="form-control" type="text" value="" id="claim-object" placeholder="Enter the object and press enter" [(ngModel)]="object.LuggageClaimObject" (keyup)="keyPressed($event.keyCode)">
+  <div class="row">
+    <div class="col-md-12">
+      <h2>You are covered by the policy</h2>
+      <div class="card-block text-nowrap">
+        <div class="form-group row">
+          <label for="claim-object" class="col-12 col-form-label">Which objects were stolen, damaged or lost?</label>
+          <div class="col-12">
+            <select class="form-control" type="url" (change)="onChange($event.target)">
+              <option disabled hidden [value]="placeholder">Select an object type</option>
+              <option>Laptop Computer</option>
+              <option>Money</option>
+              <option>Cosmetics</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-12 col-form-label" *ngIf="dataService.Objects.length > 0">Selected objects:</label>
+          <div class="col-12">
+            <ul class="list-group">
+              <li class="list-group-item justify-content-between" *ngFor="let item of dataService.Objects; let i = index">
+                {{item.LuggageClaimObject}}
+                <button class="btn btn-primary btn-sm" (click)="removeObject(item, i)">Remove</button>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="form-group row">
-        <label class="col-12 col-form-label" *ngIf="dataService.Objects.length > 0">Selected objects:</label>
-        <div class="col-12">
-          <ul class="list-group">
-            <li class="list-group-item justify-content-between" *ngFor="let item of dataService.Objects; let i = index">
-              {{item.LuggageClaimObject}}
-              <button class="btn btn-primary btn-sm" (click)="removeObject(item, i)">Remove</button>
-          </ul>
-        </div>
-      </div>
+      <button class="btn btn-primary" (click)="gatherObjectInformation()">Enter details &raquo;</button>
     </div>
-    <button class="btn btn-primary" (click)="gatherObjectInformation()">Enter details &raquo;</button>
   </div>
 </div>
-</div>
-

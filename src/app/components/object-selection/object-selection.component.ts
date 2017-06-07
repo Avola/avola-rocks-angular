@@ -10,7 +10,7 @@ import { Object } from '../../contracts/Object';
 })
 export class ObjectSelectionComponent implements OnInit {
 
-    public object: Object = new Object();
+    placeholder = -1;
 
     ngOnInit(): void {
     }
@@ -18,11 +18,11 @@ export class ObjectSelectionComponent implements OnInit {
     constructor(private dataService: DataService, private router: Router) {
     }
 
-    public keyPressed(keyCode: any): void {
-        if(keyCode === 13 && this.object.LuggageClaimObject != null && this.object.LuggageClaimObject !== '') {
-            this.dataService.Objects.push(this.object);
-            this.object = new Object();
-        }
+    public onChange(target: any): void {
+        const object = new Object();
+        object.LuggageClaimObject = target.value;
+        this.dataService.Objects.push(object);
+        target.selectedIndex = 0;
     }
     public removeObject(item: any, index: number): void {
         this.dataService.Objects.splice(index, 1);
