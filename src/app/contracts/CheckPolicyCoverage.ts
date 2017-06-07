@@ -17,7 +17,7 @@ export class CheckPolicyCoverage {
     TravelPolicyStatus: string;
     TravelWorldCoverageOption: string;
     WinterSportsCoverageOption: string;
-    TravelClaimEventDate: string;
+    TravelClaimEventDate: Date;
     TravelClaimPersonResidenceCountry: string;
     TravelDestinationCountry: string;
     PolicyNumber: string;

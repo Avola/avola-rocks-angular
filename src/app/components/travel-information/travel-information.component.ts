@@ -8,10 +8,9 @@ import { OnInit } from '@angular/core';
   selector: 'travel-information',
   templateUrl: './travel-information.component.html'
 })
-export class TravelInformationComponent implements OnInit{
+export class TravelInformationComponent implements OnInit {
 
   title = 'Travel information';
-
   ngOnInit(): void {
     this.dataService.checkPolicyCoverage.PolicyNumber = this.dataService.selectedPolicy.PolicyNumber.toString();
     this.dataService.checkPolicyCoverage.BusinessTravel = 'No Business Travel';
