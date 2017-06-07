@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { DataService } from '../../data.service';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { OnInit } from '@angular/core';
-import { Object } from '../../Classes/Object';
-import { LuggageClaimObjectCalculatedCompensationAmount } from '../../Classes/LuggageClaimObjectCalculatedCompensationAmount';
+import { Object } from '../../contracts/Object';
+import { LuggageClaimObjectCalculatedCompensationAmount } from '../../contracts/LuggageClaimObjectCalculatedCompensationAmount';
 
 @Component({
     selector: 'object-compensation-details',

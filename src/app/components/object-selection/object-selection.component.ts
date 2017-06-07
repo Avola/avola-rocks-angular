@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { DataService } from '../../data.service';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { OnInit } from '@angular/core';
-import { Object } from '../../Classes/Object';
+import { Object } from '../../contracts/Object';
 
 @Component({
     selector: 'object-selection',
@@ -19,7 +19,7 @@ export class ObjectSelectionComponent implements OnInit {
     }
 
     public keyPressed(keyCode: any): void {
-        if(keyCode == 13 && this.object.LuggageClaimObject != null && this.object.LuggageClaimObject != "") {
+        if(keyCode === 13 && this.object.LuggageClaimObject != null && this.object.LuggageClaimObject !== '') {
             this.dataService.Objects.push(this.object);
             this.object = new Object();
         }

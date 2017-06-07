@@ -29,10 +29,7 @@ export class AvolaClientService {
     }
 
     private extractData(res: Response) {
-        let body = res.json();
-        console.log(body);
-       // return body.data || {};
-       return body;
+       return res.json();
     }
 
 

@@ -2,12 +2,12 @@ import { Component, Input } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { Http, Response, Headers, RequestOptions } from '@angular/http';
-import { Object } from './Classes/Object';
-import { Policy } from './Classes/Policy';
-import { FixedValues } from './Classes/FixedValues';
-import { CheckPolicyCoverage } from './Classes/CheckPolicyCoverage';
-import { LuggageClaimObjectCoverage } from './Classes/LuggageClaimObjectCoverage';
-import { LuggageClaimObjectCalculatedCompensationAmount } from './Classes/LuggageClaimObjectCalculatedCompensationAmount';
+import { Object } from './contracts/Object';
+import { Policy } from './contracts/Policy';
+import { FixedValues } from './contracts/FixedValues';
+import { CheckPolicyCoverage } from './contracts/CheckPolicyCoverage';
+import { LuggageClaimObjectCoverage } from './contracts/LuggageClaimObjectCoverage';
+import { LuggageClaimObjectCalculatedCompensationAmount } from './contracts/LuggageClaimObjectCalculatedCompensationAmount';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
