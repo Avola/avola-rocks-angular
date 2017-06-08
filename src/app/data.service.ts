@@ -45,7 +45,6 @@ export class DataService {
     public mappedPairs: { [id: number]: PairData } = {};
     public mappedLists: { [id: number]: ListData } = {};
 
-
     constructor(private http: Http, private avolaclient: AvolaClientService) { }
 
     public getJSON(): void {
@@ -60,7 +59,8 @@ export class DataService {
             response.InputData.forEach((d) => this.mappedDatas[d.BusinessDataId] = d);
             response.ListData.forEach((d) => this.mappedLists[d.ListId] = d);
             response.PairData.forEach((d) => this.mappedPairs[d.PairId] = d);
-            // console.log('travelPolicyCoverageDecision', response);
+            console.log('mappedData', this.mappedDatas);
+            console.log('mappedLists', this.mappedLists);
         });
         this.avolaclient.getLuggageClaimObjectCoverageDecision().subscribe((response) => {
             this.luggageClaimObjectCoverageDecision = response;
