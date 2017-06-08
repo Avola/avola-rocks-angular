@@ -17,7 +17,7 @@ export class TravelInformationComponent implements OnInit {
   winterSports: PairData;
   title = 'Travel information';
   ngOnInit(): void {
-    // this.dataService.getDecisions();
+    this.dataService.mapFormData();
     // Setup default values
     this.dataService.checkPolicyCoverage.PolicyNumber = this.dataService.selectedPolicy.PolicyNumber.toString();
     this.prepareValuePairsAndLists();

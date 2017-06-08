@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataService.getJSON();
-    this.dataService.getDecisions();
+    this.dataService.getDecisionVersions();
   }
 
   constructor(private dataService: DataService) { }
