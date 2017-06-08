@@ -1,0 +1,17 @@
+<ngb-accordion activeIds="{{dataService.currentObject}}" (panelChange)="beforeChange($event)" style="padding:1em;">
+  <ngb-panel *ngFor="let itemObject of dataService.Objects; let i = index" id="{{i}}">
+    <ng-template ngbPanelTitle>
+      <span>{{itemObject.LuggageClaimObject}}
+          <b style="color:green;" *ngIf="itemObject.Coverage == 'Covered'" >&nbsp;&nbsp;&#10004;</b>
+          <b style="color:red;" *ngIf="itemObject.Coverage == 'Not Covered'" >&nbsp;&nbsp;&#10008;</b>
+      </span>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <div>
+        Coverage:&nbsp;
+        <div *ngIf="itemObject.Coverage" class="btn btn-sm btn-outline-{{ itemObject.Coverage == 'Covered' ? 'success' : 'danger'}}">{{ itemObject.Coverage }}</div>
+      </div>
+      <p>Amount:</p>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

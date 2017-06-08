@@ -13,6 +13,7 @@ import { ObjectSelectionComponent } from './components/object-selection/object-s
 import { ObjectDetailsComponent } from './components/object-details/object-details.component';
 import { ObjectCompensationDetailsComponent } from './components/object-compensation-details/object-compensation-details.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { ObjectAccordionComponent } from './components/object-accordion/object-accordion.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AdminComponent } from './components/admin/admin.component';
     ObjectSelectionComponent,
     ObjectDetailsComponent,
     ObjectCompensationDetailsComponent,
-    AdminComponent
+    AdminComponent,
+    ObjectAccordionComponent
   ],
   imports: [
     BrowserModule,

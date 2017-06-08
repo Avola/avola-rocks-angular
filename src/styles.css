@@ -55,6 +55,14 @@ footer {
   text-align: right;
 }
 
+ngb-accordion a {
+  color: black;
+}
+
+ngb-accordion a:hover {
+  color: black;
+}
+
 
 /* Large Devices, Wide Screens */
 
