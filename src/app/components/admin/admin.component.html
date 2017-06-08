@@ -10,11 +10,11 @@
       <h2>Decision services</h2>
       <p>Please specify the version number for each decision service</p>
       <ul class="list-group">
-        <li class="list-group-item justify-content-between">Determine Travel Policy Coverage (ID:5)<span>version: <input type="number" style="max-width: 50px" [(ngModel)]="dataService.travelPolicyCoverageDecisionVersion" ></span></li>
-        <li class="list-group-item justify-content-between">Determine Luggage Claim Object Coverage (ID:2)<span>version: <input type="number" style="max-width: 50px" [(ngModel)]="dataService.luggageClaimObjectCoverageDecisionVersion" ></span></li>
-        <li class="list-group-item justify-content-between">Determine Luggage Claim Object Calculated Compensation Amount (ID:1)<span>version: <input type="number" style="max-width: 50px" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmountDecisionVersion" ></span></li>
-        <li class="list-group-item justify-content-between">Determine Luggage Claim Object Settlement Mandate (ID:3)<span>version: <input type="number" style="max-width: 50px" [(ngModel)]="dataService.luggageClaimObjectSettlementMandateVersion" ></span></li>
-        <li class="list-group-item justify-content-between">Determine Travel Claim Settlement Mandate (ID:4)<span>version: <input type="number" style="max-width: 50px" [(ngModel)]="dataService.travelClaimSettlementMandateDecisionVersion" ></span></li>
+        <li class="list-group-item justify-content-between">Determine Travel Policy Coverage (ID:5)<span>version: <select style="max-width: 50px" [(ngModel)]="dataService.travelPolicyCoverageDecisionVersion"> <option *ngFor="let n of dataService.travelPolicyCoverageDecisionVersionNumbers" [ngValue]="n">{{n}}</option></select></span></li>
+        <li class="list-group-item justify-content-between">Determine Luggage Claim Object Coverage (ID:2)<span>version: <select style="max-width: 50px" [(ngModel)]="dataService.luggageClaimObjectCoverageDecisionVersion"> <option *ngFor="let n of dataService.luggageClaimObjectCoverageDecisionVersionNumbers" [ngValue]="n">{{n}}</option></select></span></li>
+        <li class="list-group-item justify-content-between">Determine Luggage Claim Object Calculated Compensation Amount (ID:1)<span>version: <select style="max-width: 50px" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmountDecisionVersion"> <option *ngFor="let n of dataService.luggageClaimObjectCalculatedCompensationAmountDecisionVersionNumbers" [ngValue]="n">{{n}}</option></select></span></li>
+        <li class="list-group-item justify-content-between">Determine Luggage Claim Object Settlement Mandate (ID:3)<span>version: <select style="max-width: 50px" [(ngModel)]="dataService.luggageClaimObjectSettlementMandateVersion"> <option *ngFor="let n of dataService.luggageClaimObjectSettlementMandateVersionNumbers" [ngValue]="n">{{n}}</option></select></span></li>
+        <li class="list-group-item justify-content-between">Determine Travel Claim Settlement Mandate (ID:4)<span>version: <select style="max-width: 50px" [(ngModel)]="dataService.travelClaimSettlementMandateDecisionVersion"> <option *ngFor="let n of dataService.travelClaimSettlementMandateDecisionVersionNumbers" [ngValue]="n">{{n}}</option></select></span></li>
       </ul>
     </div>
   </div>
