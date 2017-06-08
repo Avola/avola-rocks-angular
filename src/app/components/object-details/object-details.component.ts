@@ -31,6 +31,7 @@ export class ObjectDetailsComponent implements OnInit {
             if (coverage != null) {
                 if (coverage === 'Not Covered') {
                     this.notCovered = true;
+                    this.dataService.Objects[this.dataService.currentObject].Coverage = 'Not Covered';
                 } else {
                     const current = this.dataService.Objects[this.dataService.currentObject];
                     for (let i = 0; i < this.dataService.allObjects.length; i++) {
@@ -41,6 +42,7 @@ export class ObjectDetailsComponent implements OnInit {
                             break;
                         }
                     }
+                    this.dataService.Objects[this.dataService.currentObject].Coverage = 'Covered';
                     // this.dataService.currentObject++;
                     this.dataService.listLuggageClaimObjectCoverage.push(this.dataService.luggageClaimObjectCoverage);
                     this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectLocation = '';
