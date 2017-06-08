@@ -44,9 +44,8 @@ export class DataService {
     public selectedPolicy: Policy = null;
     public currentObject = 0;
 
-    public luggageClaimObjectCoverage: LuggageClaimObjectCoverage = new LuggageClaimObjectCoverage();
-    // tslint:disable-next-line:max-line-length
-    public luggageClaimObjectCalculatedCompensationAmount: LuggageClaimObjectCalculatedCompensationAmount = new LuggageClaimObjectCalculatedCompensationAmount();
+    public travelClaimEventDate: Date;
+    public LuggageClaimCause: string;
 
     public listLuggageClaimObjectCoverage: LuggageClaimObjectCoverage[] = [];
     public listLuggageClaimObjectCalculatedCompensationAmount: LuggageClaimObjectCalculatedCompensationAmount[] = [];

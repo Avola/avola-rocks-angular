@@ -10,13 +10,11 @@
       <h2>You are covered by the policy</h2>
       <div class="card-block text-nowrap">
         <div class="form-group row">
-          <label for="claim-object" class="col-12 col-form-label">Which objects were stolen, damaged or lost?</label>
+          <label for="claim-object" class="col-12 col-form-label">{{dataService.mappedDatas[14].Question}}</label>
           <div class="col-12">
             <select class="form-control" type="url" (change)="onChange($event.target)">
-              <option disabled hidden [value]="placeholder">Select an object type</option>
-              <option>Laptop Computer</option>
-              <option>Money</option>
-              <option>Cosmetics</option>
+              <option disabled hidden [value]="placeholder">Add an object type</option>
+              <option *ngFor="let object of objectList.Items" [ngValue]="object.Value">{{object.Value}}</option>
             </select>
           </div>
         </div>

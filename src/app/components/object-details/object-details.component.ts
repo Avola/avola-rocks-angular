@@ -4,6 +4,9 @@ import { RouterModule, Routes, Router } from '@angular/router';
 import { OnInit } from '@angular/core';
 import { Object } from '../../contracts/Object';
 import { AvolaClientService } from '../../services/avolaclient-service';
+import { ListData, PairData } from '../../contracts/DecisionServiceVersionDescriptionDetails';
+import { LuggageClaimObjectCoverage } from '../../contracts/LuggageClaimObjectCoverage';
+import { LuggageClaimObjectCalculatedCompensationAmount } from '../../contracts/LuggageClaimObjectCalculatedCompensationAmount';
 
 @Component({
     selector: 'object-details',
@@ -12,14 +15,11 @@ import { AvolaClientService } from '../../services/avolaclient-service';
 })
 export class ObjectDetailsComponent implements OnInit {
     notCovered = false;
+    objectLocation: ListData;
+    handLuggage: PairData;
 
     ngOnInit(): void {
-        this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectinHandLuggage = 'Not in Hand Luggage';
-        this.dataService.luggageClaimObjectCoverage.LuggageClaimObject
-            = this.dataService.Objects[this.dataService.currentObject].LuggageClaimObject;
-        this.dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObject
-            = this.dataService.Objects[this.dataService.currentObject].LuggageClaimObject;
-        this.dataService.luggageClaimObjectCoverage.PolicyNumber = this.dataService.selectedPolicy.PolicyNumber.toString();
+        this.prepareValuePairsAndLists();
     }
 
     constructor(private dataService: DataService, private router: Router, private avolaclient: AvolaClientService) {
@@ -27,7 +27,7 @@ export class ObjectDetailsComponent implements OnInit {
 
 
     public checkCoverage() {
-        this.avolaclient.checkObjectCoverage(this.dataService.luggageClaimObjectCoverage).subscribe((coverage) => {
+        this.avolaclient.checkObjectCoverage(this.dataService.listLuggageClaimObjectCoverage[this.dataService.currentObject]).subscribe((coverage) => {
             if (coverage != null) {
                 if (coverage === 'Not Covered') {
                     this.notCovered = true;
@@ -43,10 +43,6 @@ export class ObjectDetailsComponent implements OnInit {
                         }
                     }
                     this.dataService.Objects[this.dataService.currentObject].Coverage = 'Covered';
-                    // this.dataService.currentObject++;
-                    this.dataService.listLuggageClaimObjectCoverage.push(this.dataService.luggageClaimObjectCoverage);
-                    this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectLocation = '';
-                    this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectinHandLuggage = 'Not in Hand Luggage';
                     this.router.navigate(['/object-compensation-details']);
                     // }
                 }
@@ -57,14 +53,21 @@ export class ObjectDetailsComponent implements OnInit {
     public nextObject() {
         this.notCovered = false;
         this.dataService.currentObject++;
-        this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectLocation = '';
-        this.dataService.luggageClaimObjectCoverage.LuggageClaimObjectinHandLuggage = 'Not in Hand Luggage';
         if (this.dataService.Objects.length - 1 > this.dataService.currentObject) {
             this.router.navigate(['/object-details']);
         }
         else {
             //go to final page
         }
+    }
+
+    public prepareValuePairsAndLists(): void {
+        let objectLocationId = this.dataService.mappedDatas[10].Properties.find(p => p.Name == 'ValueListId').Value;
+        this.objectLocation = this.dataService.mappedLists[objectLocationId];
+
+        let handLuggageId = this.dataService.mappedDatas[9].Properties.find(p => p.Name == 'PairId').Value;
+        this.handLuggage = this.dataService.mappedPairs[handLuggageId];
+        this.dataService.listLuggageClaimObjectCoverage[this.dataService.currentObject].LuggageClaimObjectinHandLuggage = this.handLuggage.ValueForFalse;
     }
 }
 

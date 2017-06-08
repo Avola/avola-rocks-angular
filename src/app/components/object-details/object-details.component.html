@@ -19,28 +19,26 @@
           </div>
         </div>
         <div class="form-group row">
-          <label class="col-9 col-form-label">Where was the object located at the time of the incident?</label>
+          <label class="col-9 col-form-label">{{dataService.mappedDatas[10].Question}}</label>
           <div class="col-9">
-            <select class="form-control" type="url" value="" [(ngModel)]="dataService.luggageClaimObjectCoverage.LuggageClaimObjectLocation">
-            <option>Car</option>
-            <option>Airplane</option>
-            <option>Bus</option>
+            <select class="form-control" type="url" value="" [(ngModel)]="dataService.listLuggageClaimObjectCoverage[dataService.currentObject].LuggageClaimObjectLocation">
+            <option *ngFor="let location of objectLocation.Items" [ngValue]="location.Value">{{location.Value}}</option>
           </select>
           </div>
         </div>
         <div class="form-group row">
           <fieldset class="form-group col-9">
-            <label>Was the object placed in your hand luggage at the time of the incident?</label>
+            <label>{{dataService.mappedDatas[9].Question}}</label>
             <div class="form-check">
               <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="objectInHandRadioButton" value="In Hand Luggage" [(ngModel)]="dataService.luggageClaimObjectCoverage.LuggageClaimObjectinHandLuggage">
-                Yes, it was
+              <input type="radio" class="form-check-input" name="objectInHandRadioButton" [value]="handLuggage.ValueForTrue" [(ngModel)]="dataService.listLuggageClaimObjectCoverage[dataService.currentObject].LuggageClaimObjectinHandLuggage">
+                {{handLuggage.ValueForTrue}}
             </label>
             </div>
             <div class="form-check">
               <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="objectInHandRadioButton" value="Not in Hand Luggage" [(ngModel)]="dataService.luggageClaimObjectCoverage.LuggageClaimObjectinHandLuggage">
-                No, it wasn't'
+              <input type="radio" class="form-check-input" name="objectInHandRadioButton" [value]="handLuggage.ValueForFalse" [(ngModel)]="dataService.listLuggageClaimObjectCoverage[dataService.currentObject].LuggageClaimObjectinHandLuggage">
+                {{handLuggage.ValueForFalse}}
             </label>
             </div>
           </fieldset>

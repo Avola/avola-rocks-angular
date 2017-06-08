@@ -10,59 +10,59 @@
       <h2>Detailed information of {{dataService.Objects[dataService.currentObject].LuggageClaimObject}}</h2>
       <div class="card-block text-nowrap">
         <div class="form-group row">
-          <label for="claim-object-date" class="col-9 col-form-label">What was the purchase date of the object?</label>
+          <label for="claim-object-date" class="col-9 col-form-label">{{dataService.mappedDatas[21].Question}}</label>
           <div class="col-9">
-            <input class="form-control" type="date" value="" id="claim-object-date" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectPurchaseDate">
+            <input class="form-control" type="date" value="" id="claim-object-date" [(ngModel)]="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObjectPurchaseDate">
           </div>
         </div>
         <div class="form-group row">
-          <label for="claim-object-value" class="col-9 col-form-label">What was the original purchase value of the claim object?</label>
+          <label for="claim-object-value" class="col-9 col-form-label">{{dataService.mappedDatas[22].Question}}</label>
           <div class="col-9">
-            <input class="form-control" type="number" value="" id="claim-object-value" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectPurchaseValue">
+            <input class="form-control" type="number" value="" id="claim-object-value" [(ngModel)]="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObjectPurchaseValue">
           </div>
         </div>
-        <div *ngIf="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObject == 'Laptop Computer'" class="form-group row">
+        <div *ngIf="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObject == 'Laptop Computer'" class="form-group row">
           <fieldset class="form-group col-9">
-            <label>Was the claim object repaired after the incident?</label>
+            <label>{{dataService.mappedDatas[23].Question}}</label>
             <div class="form-check">
               <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="objectRepairRadioButton" value="Repair" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectRepair">
-                Yes, it was
+              <input type="radio" class="form-check-input" name="objectRepairRadioButton" [value]="repair.ValueForTrue" [(ngModel)]="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObjectRepair">
+                {{repair.ValueForTrue}}
             </label>
             </div>
             <div class="form-check">
               <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="objectRepairRadioButton" value="No Repair" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectRepair">
-                No, it wasn't'
+              <input type="radio" class="form-check-input" name="objectRepairRadioButton" [value]="repair.ValueForFalse" [(ngModel)]="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObjectRepair">
+                {{repair.ValueForFalse}}
             </label>
             </div>
           </fieldset>
         </div>
-        <div *ngIf="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectRepair == 'Repair'" class="form-group row">
-          <label for="claim-object-repair" class="col-9 col-form-label">What was the repair cost?</label>
+        <div *ngIf="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObjectRepair == 'Repair'" class="form-group row">
+          <label for="claim-object-repair" class="col-9 col-form-label">{{dataService.mappedDatas[24].Question}}</label>
           <div class="col-9">
-            <input class="form-control" type="number" value="" id="claim-object-repair" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectRepairValue">
+            <input class="form-control" type="number" value="" id="claim-object-repair" [(ngModel)]="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObjectRepairValue">
           </div>
         </div>
-        <div *ngIf="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObject == 'Money'" class="form-group row">
-          <label for="claim-object-persons" class="col-9 col-form-label">What was the total number of insured persons in your travel?</label>
+        <div *ngIf="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObject == 'Money'" class="form-group row">
+          <label for="claim-object-persons" class="col-9 col-form-label">{{dataService.mappedDatas[40].Question}}</label>
           <div class="col-9">
-            <input class="form-control" type="number" value="" id="claim-object-persons" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.TravelNumberofInsuredPersons">
+            <input class="form-control" type="number" value="" id="claim-object-persons" [(ngModel)]="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].TravelNumberofInsuredPersons">
           </div>
         </div>
-        <div *ngIf="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObject == 'Cosmetics'" class="form-group row">
+        <div *ngIf="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObject == 'Cosmetics'" class="form-group row">
           <fieldset class="form-group col-9">
-            <label>Was the claim object opened before the incident?</label>
+            <label>{{dataService.mappedDatas[20].Question}}</label>
             <div class="form-check">
               <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="objectOpenedRadioButton" value="Opened" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectOpened">
-                Yes, it was
+              <input type="radio" class="form-check-input" name="objectOpenedRadioButton" [value]="opened.ValueForTrue" [(ngModel)]="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObjectOpened">
+                {{opened.ValueForTrue}}
             </label>
             </div>
             <div class="form-check">
               <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="objectOpenedRadioButton" value="Not Opened" [(ngModel)]="dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectOpened">
-                No, it wasn't'
+              <input type="radio" class="form-check-input" name="objectOpenedRadioButton" [value]="opened.ValueForFalse" [(ngModel)]="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObjectOpened">
+                {{opened.ValueForFalse}}
             </label>
             </div>
           </fieldset>

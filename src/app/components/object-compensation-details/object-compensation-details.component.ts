@@ -4,6 +4,7 @@ import { RouterModule, Routes, Router } from '@angular/router';
 import { OnInit } from '@angular/core';
 import { Object } from '../../contracts/Object';
 import { LuggageClaimObjectCalculatedCompensationAmount } from '../../contracts/LuggageClaimObjectCalculatedCompensationAmount';
+import { PairData } from '../../contracts/DecisionServiceVersionDescriptionDetails';
 
 @Component({
     selector: 'object-compensation-details',
@@ -11,9 +12,11 @@ import { LuggageClaimObjectCalculatedCompensationAmount } from '../../contracts/
 })
 export class ObjectCompensationDetailsComponent implements OnInit {
 
+    repair: PairData;
+    opened: PairData;
+
     ngOnInit(): void {
-        this.dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectRepair = 'No Repair';
-        this.dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectOpened = 'Not Opened';
+        this.prepareValuePairsAndLists();
     }
 
     constructor(private dataService: DataService, private router: Router) {
@@ -21,21 +24,23 @@ export class ObjectCompensationDetailsComponent implements OnInit {
 
     public nextDetail(moreItems: boolean): void {
         this.dataService.currentObject++;
-        this.dataService.listLuggageClaimObjectCalculatedCompensationAmount
-            .push(this.dataService.luggageClaimObjectCalculatedCompensationAmount);
         if (moreItems) {
-            this.dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectPurchaseDate = null;
-            this.dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectPurchaseValue = null;
-            this.dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectRepairValue = null;
-            this.dataService.luggageClaimObjectCalculatedCompensationAmount.TravelNumberofInsuredPersons = null;
-            this.dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectRepair = 'No Repair';
-            this.dataService.luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObjectOpened = 'Not Opened';
-
             this.router.navigate(['/object-details']);
         }
         else {
             //go to final pay amount
         }
+    }
+
+    public prepareValuePairsAndLists(): void {
+        const repairId = this.dataService.mappedDatas[23].Properties.find(p => p.Name === 'PairId').Value;
+        this.repair = this.dataService.mappedPairs[repairId];
+        this.dataService.listLuggageClaimObjectCalculatedCompensationAmount[this.dataService.currentObject].LuggageClaimObjectRepair = this.repair.ValueForFalse;
+
+        const openedId = this.dataService.mappedDatas[20].Properties.find(p => p.Name === 'PairId').Value;
+        this.opened = this.dataService.mappedPairs[openedId];
+        this.dataService.listLuggageClaimObjectCalculatedCompensationAmount[this.dataService.currentObject].LuggageClaimObjectOpened = this.opened.ValueForFalse;
+
     }
 }
 

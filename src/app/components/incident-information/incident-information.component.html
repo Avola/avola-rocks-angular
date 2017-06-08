@@ -12,7 +12,7 @@
         <div class="form-group row">
           <label class="col-12 col-form-label">{{dataService.mappedDatas[5].Question}}</label>
           <div class="col-12">
-            <select class="form-control" type="url" value="" [(ngModel)]="dataService.luggageClaimObjectCoverage.LuggageClaimCause">
+            <select class="form-control" type="url" value="" [(ngModel)]="dataService.LuggageClaimCause">
             <option *ngFor="let cause of luggageClaimCause.Items" [ngValue]="cause.Value">{{cause.Value}}</option>
           </select>
           </div>
