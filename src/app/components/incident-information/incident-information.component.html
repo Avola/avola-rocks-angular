@@ -10,42 +10,42 @@
       <h2>Tell us more about the incident, please.</h2>
       <div class="card-block text-nowrap">
         <div class="form-group row">
-          <label class="col-12 col-form-label">What caused the incident? </label>
+          <label class="col-12 col-form-label">{{dataService.mappedDatas[5].Question}}</label>
           <div class="col-12">
             <select class="form-control" type="url" value="" [(ngModel)]="dataService.luggageClaimObjectCoverage.LuggageClaimCause">
-            <option>Damage</option>
-            <option>Loss</option>
-            <option>Theft</option>
+            <option *ngFor="let cause of luggageClaimCause.Items" [ngValue]="cause.Value">{{cause.Value}}</option>
           </select>
           </div>
         </div>
         <div class="form-group row">
-          <label for="travel-claim-event-date" class="col-12 col-form-label">When did the incident take place?</label>
+          <label for="travel-claim-event-date" class="col-12 col-form-label">{{dataService.mappedDatas[83].Question}}</label>
           <div class="col-12">
             <input class="form-control" type="date" value="" id="travel-claim-event-date" [(ngModel)]="dataService.checkPolicyCoverage.TravelClaimEventDate">
           </div>
         </div>
         <div class="form-group row">
           <fieldset class="form-group col-12">
-            <label>Was the reported incident caused by a crime or an attempt to crime</label>
+            <label>{{dataService.mappedDatas[45].Question}}</label>
             <div class="form-check">
               <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="crimeRadioButton" value="Crime or Attempt to Crime" [(ngModel)]="dataService.checkPolicyCoverage.CrimeorAttempttoCrime">
-                Yes, they tried to steal it
+              <input type="radio" class="form-check-input" name="crimeRadioButton" [value]="crimeorAttempttoCrime.ValueForTrue" [(ngModel)]="dataService.checkPolicyCoverage.CrimeorAttempttoCrime">
+                {{crimeorAttempttoCrime.ValueForTrue}}
             </label>
             </div>
             <div class="form-check">
               <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="crimeRadioButton" value="No Crime or Attempt to Crime" [(ngModel)]="dataService.checkPolicyCoverage.CrimeorAttempttoCrime">
-                No, they didn't try to steal it'
+              <input type="radio" class="form-check-input" name="crimeRadioButton" [value]="crimeorAttempttoCrime.ValueForFalse" [(ngModel)]="dataService.checkPolicyCoverage.CrimeorAttempttoCrime">
+                {{crimeorAttempttoCrime.ValueForFalse}}
             </label>
             </div>
           </fieldset>
         </div>
         <div class="form-group row">
-          <label for="sport-practiced" class="col-12 col-form-label">Were you practicing any of the following sports during the incident? If so, indicate which.</label>
+          <label for="sport-practiced" class="col-12 col-form-label">{{dataService.mappedDatas[52].Question}}</label>
           <div class="col-12">
-            <select class="form-control" type="url" value="" id="travel-destination-country" [(ngModel)]="dataService.checkPolicyCoverage.SportPracticed"> </select>
+            <select class="form-control" type="url" value="" id="travel-destination-country" [(ngModel)]="dataService.checkPolicyCoverage.SportPracticed"> 
+                <option *ngFor="let sport of sportsPracticed.Items" [ngValue]="sport.Value">{{sport.Value}}</option>
+            </select>
           </div>
         </div>
       </div>

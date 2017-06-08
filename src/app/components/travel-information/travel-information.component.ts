@@ -3,8 +3,7 @@ import { DataService } from '../../data.service';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { Policy } from '../../contracts/Policy';
 import { OnInit } from '@angular/core';
-import { ListData } from '../../contracts/DecisionServiceVersionDescriptionDetails';
-import { PairData } from '../../contracts/DecisionServiceVersionDescriptionDetails';
+import { ListData, PairData } from '../../contracts/DecisionServiceVersionDescriptionDetails';
 
 @Component({
   selector: 'travel-information',

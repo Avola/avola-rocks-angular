@@ -119,6 +119,7 @@ export class DataService {
         selectedVersion.InputData.forEach((d) => this.mappedDatas[d.BusinessDataId] = d);
         selectedVersion.ListData.forEach((d) => this.mappedLists[d.ListId] = d);
         selectedVersion.PairData.forEach((d) => this.mappedPairs[d.PairId] = d);
+        console.log('data', this.mappedDatas);
     }
 
     private ImportData(data: any) {
