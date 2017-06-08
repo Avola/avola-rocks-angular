@@ -35,7 +35,6 @@ export class DataService {
 
     public mappedTravelPolicyCoverageDecisionVersions: { [version: number]: DecisionServiceVersionDescription } = {};
     public mappedLuggageClaimObjectCoverageDecisionVersions: { [version: number]: DecisionServiceVersionDescription } = {};
-    // tslint:disable-next-line:max-line-length
     public mappedLuggageClaimObjectCalculatedCompensationAmountDecisionVersions: { [version: number]: DecisionServiceVersionDescription } = {};
     public mappedLuggageClaimObjectSettlementMandateVersions: { [version: number]: DecisionServiceVersionDescription } = {};
     public mappedTravelClaimSettlementMandateDecisionVersions: { [version: number]: DecisionServiceVersionDescription } = {};
@@ -76,7 +75,6 @@ export class DataService {
         this.avolaclient.getLuggageClaimObjectCalculatedCompensationAmountDecisionVersions().subscribe((response) => {
             response.forEach((d) => this.mappedLuggageClaimObjectCalculatedCompensationAmountDecisionVersions[d.VersionNumber] = d);
             this.luggageClaimObjectCalculatedCompensationAmountDecisionVersionNumbers = response.map(({ VersionNumber }) => VersionNumber);
-            // tslint:disable-next-line:max-line-length
             this.luggageClaimObjectCalculatedCompensationAmountDecisionVersion = Math.max.apply(Math, this.luggageClaimObjectCalculatedCompensationAmountDecisionVersionNumbers);
         });
         this.avolaclient.getLuggageClaimObjectSettlementMandateVersions().subscribe((response) => {
@@ -87,7 +85,6 @@ export class DataService {
         this.avolaclient.getTravelClaimSettlementMandateDecisionVersions().subscribe((response) => {
             response.forEach((d) => this.mappedTravelClaimSettlementMandateDecisionVersions[d.VersionNumber] = d);
             this.travelClaimSettlementMandateDecisionVersionNumbers = response.map(({ VersionNumber }) => VersionNumber);
-            // tslint:disable-next-line:max-line-length
             this.travelClaimSettlementMandateDecisionVersion = Math.max.apply(Math, this.travelClaimSettlementMandateDecisionVersionNumbers);
         });
     }
@@ -103,7 +100,6 @@ export class DataService {
         selectedVersion.ListData.forEach((d) => this.mappedLists[d.ListId] = d);
         selectedVersion.PairData.forEach((d) => this.mappedPairs[d.PairId] = d);
 
-        // tslint:disable-next-line:max-line-length
         selectedVersion = this.mappedLuggageClaimObjectCalculatedCompensationAmountDecisionVersions[this.luggageClaimObjectCalculatedCompensationAmountDecisionVersion];
         selectedVersion.InputData.forEach((d) => this.mappedDatas[d.BusinessDataId] = d);
         selectedVersion.ListData.forEach((d) => this.mappedLists[d.ListId] = d);

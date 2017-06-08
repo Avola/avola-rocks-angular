@@ -6,15 +6,15 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-8">
       <h2>Information of {{dataService.Objects[dataService.currentObject].LuggageClaimObject}}</h2>
       <div class="card-block text-nowrap">
         <div class="form-group row">
           <label for="claim-object-brand" class="col-12 col-form-label">What was the brand name and model of the object?</label>
-          <div class="col-9">
+          <div class="col-8">
             <input class="form-control" type="text" value="" id="claim-object-brand" placeholder="Brand" [(ngModel)]="dataService.Objects[dataService.currentObject].Brand">
           </div>
-          <div class="col-9">
+          <div class="col-8">
             <input class="form-control" type="text" value="" id="claim-object-model" placeholder="Model" [(ngModel)]="dataService.Objects[dataService.currentObject].Model">
           </div>
         </div>
@@ -50,7 +50,7 @@
       <button *ngIf="notCovered" class="btn btn-primary" (click)="nextObject()">Proceed &raquo;</button>
       <button *ngIf="!notCovered" class="btn btn-primary" (click)="checkCoverage()">Next &raquo;</button>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <object-accordion></object-accordion>
     </div>
   </div>

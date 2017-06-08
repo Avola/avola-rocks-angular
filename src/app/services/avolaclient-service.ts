@@ -40,25 +40,21 @@ export class AvolaClientService {
     }
 
     getLuggageClaimObjectCoverageDecisionVersions(): Observable<DecisionServiceVersionDescription[]> {
-        // tslint:disable-next-line:max-line-length
         return this.http.get(this.baseUrl + '/travel/listavailabledecisionservices/' + this.luggageClaimObjectCoverageDecisionId, this.options)
             .map(this.extractData);
     }
 
     getLuggageClaimObjectCalculatedCompensationAmountDecisionVersions(): Observable<DecisionServiceVersionDescription[]> {
-        // tslint:disable-next-line:max-line-length
         return this.http.get(this.baseUrl + '/travel/listavailabledecisionservices/' + this.luggageClaimObjectCalculatedCompensationAmountDecisionId, this.options)
             .map(this.extractData);
     }
 
     getLuggageClaimObjectSettlementMandateVersions(): Observable<DecisionServiceVersionDescription[]> {
-        // tslint:disable-next-line:max-line-length
         return this.http.get(this.baseUrl + '/travel/listavailabledecisionservices/' + this.luggageClaimObjectSettlementMandateDecisionId, this.options)
             .map(this.extractData);
     }
 
     getTravelClaimSettlementMandateDecisionVersions(): Observable<DecisionServiceVersionDescription[]> {
-        // tslint:disable-next-line:max-line-length
         return this.http.get(this.baseUrl + '/travel/listavailabledecisionservices/' + this.travelClaimSettlementMandateDecisionId, this.options)
             .map(this.extractData);
     }

@@ -6,7 +6,7 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-8">
       <h2>Detailed information of {{dataService.Objects[dataService.currentObject].LuggageClaimObject}}</h2>
       <div class="card-block text-nowrap">
         <div class="form-group row">
@@ -71,7 +71,7 @@
       <button *ngIf="dataService.Objects.length - 1 > dataService.currentObject" class="btn btn-primary" (click)="nextDetail(true)">Next object &raquo;</button>
       <button *ngIf="dataService.Objects.length - 1 <= dataService.currentObject" class="btn btn-primary" (click)="nextDetail(false)">Proceed &raquo;</button>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <object-accordion></object-accordion>
     </div>
   </div>
