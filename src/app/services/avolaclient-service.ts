@@ -34,36 +34,6 @@ export class AvolaClientService {
             .map(this.extractData);
     }
 
-    getTravelPolicyCoverageDecision(): Observable<DecisionServiceVersionDescription> {
-        // tslint:disable-next-line:max-line-length
-        return this.http.get(this.baseUrl + '/travel/getdecisionserviceversiondescription/' + this.travelPolicyCoverageDecisionId + '/' + 1, this.options)
-            .map(this.extractData);
-    }
-
-    getLuggageClaimObjectCoverageDecision(): Observable<DecisionServiceVersionDescription> {
-        // tslint:disable-next-line:max-line-length
-        return this.http.get(this.baseUrl + '/travel/getdecisionserviceversiondescription/' + this.luggageClaimObjectCoverageDecisionId + '/' + 1, this.options)
-            .map(this.extractData);
-    }
-
-    getLuggageClaimObjectCalculatedCompensationAmountDecision(): Observable<DecisionServiceVersionDescription> {
-        // tslint:disable-next-line:max-line-length
-        return this.http.get(this.baseUrl + '/travel/getdecisionserviceversiondescription/' + this.luggageClaimObjectCalculatedCompensationAmountDecisionId + '/' + 2, this.options)
-            .map(this.extractData);
-    }
-
-    getLuggageClaimObjectSettlementMandate(): Observable<DecisionServiceVersionDescription> {
-        // tslint:disable-next-line:max-line-length
-        return this.http.get(this.baseUrl + '/travel/getdecisionserviceversiondescription/' + this.luggageClaimObjectSettlementMandateDecisionId + '/' + 1, this.options)
-            .map(this.extractData);
-    }
-
-    getTravelClaimSettlementMandateDecision(): Observable<DecisionServiceVersionDescription> {
-        // tslint:disable-next-line:max-line-length
-        return this.http.get(this.baseUrl + '/travel/getdecisionserviceversiondescription/' + this.travelClaimSettlementMandateDecisionId + '/' + 1, this.options)
-            .map(this.extractData);
-    }
-
     getTravelPolicyCoverageDecisionVersions(): Observable<DecisionServiceVersionDescription[]> {
         return this.http.get(this.baseUrl + '/travel/listavailabledecisionservices/' + this.travelPolicyCoverageDecisionId, this.options)
             .map(this.extractData);
