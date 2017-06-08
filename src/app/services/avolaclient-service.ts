@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import * as Globals from './globals';
+import { DecisionServiceVersionDescription } from '../contracts/DecisionServiceVersionDescription';
 
 @Injectable()
 export class AvolaClientService {
@@ -28,8 +29,28 @@ export class AvolaClientService {
             .map(this.extractData);
     }
 
-    listAllDecisions(): Observable<Object> {
-        return this.http.get(this.baseUrl + '/travel/listallservices', this.options)
+    getTravelPolicyCoverageDecision(): Observable<DecisionServiceVersionDescription> {
+        return this.http.get(this.baseUrl + '/travel/getdecisionserviceversiondescription/' + 5 + '/' + 1, this.options)
+            .map(this.extractData);
+    }
+
+    getLuggageClaimObjectCoverageDecision(): Observable<DecisionServiceVersionDescription> {
+        return this.http.get(this.baseUrl + '/travel/getdecisionserviceversiondescription/' + 2 + '/' + 1, this.options)
+            .map(this.extractData);
+    }
+
+    getLuggageClaimObjectCalculatedCompensationAmountDecision(): Observable<DecisionServiceVersionDescription> {
+        return this.http.get(this.baseUrl + '/travel/getdecisionserviceversiondescription/' + 1 + '/' + 2, this.options)
+            .map(this.extractData);
+    }
+
+    getLuggageClaimObjectSettlementMandate(): Observable<DecisionServiceVersionDescription> {
+        return this.http.get(this.baseUrl + '/travel/getdecisionserviceversiondescription/' + 3 + '/' + 1, this.options)
+            .map(this.extractData);
+    }
+
+    getTravelClaimSettlementMandateDecision(): Observable<DecisionServiceVersionDescription> {
+        return this.http.get(this.baseUrl + '/travel/getdecisionserviceversiondescription/' + 4 + '/' + 1, this.options)
             .map(this.extractData);
     }
 

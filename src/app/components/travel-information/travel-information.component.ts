@@ -12,6 +12,8 @@ export class TravelInformationComponent implements OnInit {
 
   title = 'Travel information';
   ngOnInit(): void {
+    this.dataService.getDecisions();
+    // Setup default values
     this.dataService.checkPolicyCoverage.PolicyNumber = this.dataService.selectedPolicy.PolicyNumber.toString();
     this.dataService.checkPolicyCoverage.BusinessTravel = 'No Business Travel';
     this.dataService.checkPolicyCoverage.WinterSportsTravel = 'No Winter Sports';
@@ -22,6 +24,7 @@ export class TravelInformationComponent implements OnInit {
   public getIncidentInfo(): void {
     this.router.navigate(['/incident-info']);
   }
+
 
 }
 
