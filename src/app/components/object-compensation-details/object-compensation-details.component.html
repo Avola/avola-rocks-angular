@@ -21,7 +21,8 @@
             <input class="form-control" type="number" value="" id="claim-object-value" [(ngModel)]="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObjectPurchaseValue">
           </div>
         </div>
-        <div *ngIf="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObject == 'Laptop Computer'" class="form-group row">
+        <div *ngIf="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObject == 'Laptop Computer'"
+          class="form-group row">
           <fieldset class="form-group col-9">
             <label>{{dataService.mappedDatas[23].Question}}</label>
             <div class="form-check">
@@ -38,19 +39,22 @@
             </div>
           </fieldset>
         </div>
-        <div *ngIf="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObjectRepair == 'Repair'" class="form-group row">
+        <div *ngIf="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObjectRepair == 'Repair'"
+          class="form-group row">
           <label for="claim-object-repair" class="col-9 col-form-label">{{dataService.mappedDatas[24].Question}}</label>
           <div class="col-9">
             <input class="form-control" type="number" value="" id="claim-object-repair" [(ngModel)]="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObjectRepairValue">
           </div>
         </div>
-        <div *ngIf="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObject == 'Money'" class="form-group row">
+        <div *ngIf="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObject == 'Money'"
+          class="form-group row">
           <label for="claim-object-persons" class="col-9 col-form-label">{{dataService.mappedDatas[40].Question}}</label>
           <div class="col-9">
             <input class="form-control" type="number" value="" id="claim-object-persons" [(ngModel)]="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].TravelNumberofInsuredPersons">
           </div>
         </div>
-        <div *ngIf="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObject == 'Cosmetics'" class="form-group row">
+        <div *ngIf="dataService.listLuggageClaimObjectCalculatedCompensationAmount[dataService.currentObject].LuggageClaimObject == 'Cosmetics'"
+          class="form-group row">
           <fieldset class="form-group col-9">
             <label>{{dataService.mappedDatas[20].Question}}</label>
             <div class="form-check">
@@ -68,8 +72,18 @@
           </fieldset>
         </div>
       </div>
-      <button *ngIf="dataService.Objects.length - 1 > dataService.currentObject" class="btn btn-primary" (click)="nextDetail(true)">Next object &raquo;</button>
-      <button *ngIf="dataService.Objects.length - 1 <= dataService.currentObject" class="btn btn-primary" (click)="nextDetail(false)">Proceed &raquo;</button>
+      <div *ngIf="dataService.Objects[this.dataService.currentObject].CoverageAmount" class="alert alert-info" role="alert">
+        Ka-ching! You will receive: <b>{{dataService.Objects[this.dataService.currentObject].CoverageAmount}}</b> as compensation
+        amount for this item.
+      </div>
+      <div *ngIf="errorAmountCalculation" class="alert alert-danger" role="alert">
+        Oops! We couldn't figure out the amount for this item, please continue.
+      </div>
+      <button *ngIf="!dataService.Objects[this.dataService.currentObject].CoverageAmount && !errorAmountCalculation" class="btn btn-primary" (click)="checkAmount()">Check Compensation &raquo;</button>
+      <div *ngIf="dataService.Objects[this.dataService.currentObject].CoverageAmount || errorAmountCalculation">
+        <button *ngIf="dataService.Objects.length - 1 > dataService.currentObject" class="btn btn-primary" (click)="nextDetail(true)">Next object &raquo;</button>
+        <button *ngIf="dataService.Objects.length - 1 <= dataService.currentObject" class="btn btn-primary" (click)="nextDetail(false)">Proceed &raquo;</button>
+      </div>
     </div>
     <div class="col-md-4">
       <object-accordion></object-accordion>
