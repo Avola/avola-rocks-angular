@@ -153,3 +153,7 @@ ngb-accordion a {
     font-size: 1.7rem;
   }
 }
+
+.av-list-selected {
+  background: #f2f9f2;
+}

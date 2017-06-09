@@ -40,6 +40,7 @@ export class DataService {
     public mappedTravelClaimSettlementMandateDecisionVersions: { [version: number]: DecisionServiceVersionDescription } = {};
 
     public checkPolicyCoverage: CheckPolicyCoverage = new CheckPolicyCoverage();
+    public foundPolicies: Policy[] = [];
     public selectedPolicy: Policy = null;
     public currentObject = 0;
 

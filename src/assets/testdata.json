@@ -185,6 +185,42 @@
       "FrissScore": "Red",
       "PremiumPaymentSituation": "Premium Payment Done",
       "ClaimsPastYears": "4"
+    },
+    {
+      "PolicyNumber": "10111219",
+      "ClaimNumber": "",
+      "Name": "Mr. Garrard",
+      "UserName": "test",
+      "Password": "test",
+      "Address": "Nieuwelei 62",
+      "PostalCode": "2640",
+      "City": "Mortsel",
+      "Country": "België",
+      "ClaimDuration": "Short Term",
+      "Status": "Found",
+      "WorldCoverage": "World Coverage",
+      "WinterSportsCoverageOption": "Not Covered",
+      "FrissScore": "Red",
+      "PremiumPaymentSituation": "Premium Payment Done",
+      "ClaimsPastYears": "4"
+    },
+    {
+      "PolicyNumber": "10111220",
+      "ClaimNumber": "",
+      "Name": "Mr. Garrard",
+      "UserName": "test",
+      "Password": "test",
+      "Address": "Nieuwelei 62",
+      "PostalCode": "2640",
+      "City": "Mortsel",
+      "Country": "België",
+      "ClaimDuration": "Short Term",
+      "Status": "Found",
+      "WorldCoverage": "World Coverage",
+      "WinterSportsCoverageOption": "Not Covered",
+      "FrissScore": "Red",
+      "PremiumPaymentSituation": "Premium Payment Done",
+      "ClaimsPastYears": "4"
     }
   ],
 

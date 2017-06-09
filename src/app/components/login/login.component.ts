@@ -17,17 +17,12 @@ export class LoginComponent {
 
 
   public Login(): void {
-
-    let foundPolicy = null;
-
     for (let i = 0; i < this.dataService.allPolicies.length; i++) {
       if (this.dataService.allPolicies[i].UserName === this.username && this.dataService.allPolicies[i].Password === this.password) {
-        foundPolicy = this.dataService.allPolicies[i];
-        break;
+        this.dataService.foundPolicies.push(this.dataService.allPolicies[i]);
       }
     }
-    if (foundPolicy != null) {
-      this.dataService.selectedPolicy = foundPolicy;
+    if (this.dataService.foundPolicies.length > 0) {
       this.router.navigate(['/policy-number']);
     } else {
       this.userNotFound = true;
