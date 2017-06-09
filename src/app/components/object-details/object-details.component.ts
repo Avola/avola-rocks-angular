@@ -54,7 +54,7 @@ export class ObjectDetailsComponent implements OnInit {
         this.notCovered = false;
         this.dataService.currentObject++;
 
-        if (this.dataService.Objects.length > this.dataService.currentObject) {
+        if (this.dataService.Objects.length > this.dataService.currentObject + 1) {
             this.router.navigate(['/object-details']);
         }
         else {
