@@ -26,7 +26,7 @@ export class ObjectSelectionComponent implements OnInit {
     public onChange(target: any): void {
         const object = new Object();
         object.LuggageClaimObject = target.value;
-console.log(object);
+
         const luggageClaimObjectCoverage = new LuggageClaimObjectCoverage();
         luggageClaimObjectCoverage.LuggageClaimObject = object.LuggageClaimObject;
         luggageClaimObjectCoverage.PolicyNumber = this.dataService.selectedPolicy.PolicyNumber.toString();
