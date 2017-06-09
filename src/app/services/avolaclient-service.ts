@@ -34,6 +34,11 @@ export class AvolaClientService {
             .map(this.extractData);
     }
 
+    checkCompensationAmount(obj: Object): Observable<Object> {
+        return this.http.post(this.baseUrl + '/Travel/checkobjectcompensationamount', obj, this.options)
+            .map(this.extractData);
+    }
+
     getTravelPolicyCoverageDecisionVersions(): Observable<DecisionServiceVersionDescription[]> {
         return this.http.get(this.baseUrl + '/travel/listavailabledecisionservices/' + this.travelPolicyCoverageDecisionId, this.options)
             .map(this.extractData);
