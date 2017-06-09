@@ -19,6 +19,7 @@ export class ObjectCompensationDetailsComponent implements OnInit {
 
     ngOnInit(): void {
         this.prepareValuePairsAndLists();
+        this.dataService.listLuggageClaimObjectCalculatedCompensationAmount[this.dataService.currentObject].TravelClaimEventDate = this.dataService.checkPolicyCoverage.TravelClaimEventDate;
     }
 
     constructor(private dataService: DataService, private router: Router, private avolaclient: AvolaClientService) {
@@ -42,7 +43,7 @@ export class ObjectCompensationDetailsComponent implements OnInit {
             this.router.navigate(['/object-details']);
         }
         else {
-            //go to final pay amount
+            this.router.navigate(['/final-amount']);
         }
     }
 

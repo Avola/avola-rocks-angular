@@ -14,6 +14,7 @@ import { ObjectDetailsComponent } from './components/object-details/object-detai
 import { ObjectCompensationDetailsComponent } from './components/object-compensation-details/object-compensation-details.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { ObjectAccordionComponent } from './components/object-accordion/object-accordion.component';
+import { FinalAmountComponent } from './components/final-amount/final-amount.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ObjectAccordionComponent } from './components/object-accordion/object-a
     ObjectDetailsComponent,
     ObjectCompensationDetailsComponent,
     AdminComponent,
-    ObjectAccordionComponent
+    ObjectAccordionComponent,
+    FinalAmountComponent
   ],
   imports: [
     BrowserModule,
@@ -65,6 +67,10 @@ import { ObjectAccordionComponent } from './components/object-accordion/object-a
       {
         path: 'admin',
         component: AdminComponent
+      },
+      {
+        path: 'final-amount',
+        component: FinalAmountComponent
       }
     ])
   ],

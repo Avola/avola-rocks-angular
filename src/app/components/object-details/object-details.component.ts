@@ -53,11 +53,13 @@ export class ObjectDetailsComponent implements OnInit {
     public nextObject() {
         this.notCovered = false;
         this.dataService.currentObject++;
+        console.log(this.dataService.Objects);
+        console.log(this.dataService.currentObject);
         if (this.dataService.Objects.length - 1 > this.dataService.currentObject) {
             this.router.navigate(['/object-details']);
         }
         else {
-            //go to final page
+            this.router.navigate(['/final-amount']);
         }
     }
 
