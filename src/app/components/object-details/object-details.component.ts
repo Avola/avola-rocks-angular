@@ -38,13 +38,14 @@ export class ObjectDetailsComponent implements OnInit {
                         if (current.LuggageClaimObject === this.dataService.allObjects[i].LuggageClaimObject &&
                             current.Brand === this.dataService.allObjects[i].Brand && current.Model
                             === this.dataService.allObjects[i].Model) {
-                            this.dataService.Objects[this.dataService.currentObject] = this.dataService.allObjects[i];
+                            this.dataService.listLuggageClaimObjectCalculatedCompensationAmount[this.dataService.currentObject].LuggageClaimObjectCurrentSalesValue
+                                = this.dataService.allObjects[i].ClaimObjectSalesValue.toString();
                             break;
                         }
                     }
+
                     this.dataService.Objects[this.dataService.currentObject].Coverage = 'Covered';
                     this.router.navigate(['/object-compensation-details']);
-                    // }
                 }
             }
         });

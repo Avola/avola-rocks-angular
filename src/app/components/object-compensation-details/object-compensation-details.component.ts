@@ -25,6 +25,10 @@ export class ObjectCompensationDetailsComponent implements OnInit {
     }
 
     public checkAmount() {
+        if (this.dataService.Objects[this.dataService.currentObject].LuggageClaimObject === 'Money') {
+            this.dataService.listLuggageClaimObjectCalculatedCompensationAmount[this.dataService.currentObject].LuggageClaimObjectCurrentSalesValue
+                = this.dataService.listLuggageClaimObjectCalculatedCompensationAmount[this.dataService.currentObject].LuggageClaimObjectPurchaseValue;
+        }
         this.avolaclient.checkCompensationAmount(this.dataService.listLuggageClaimObjectCalculatedCompensationAmount[this.dataService.currentObject]).subscribe((amount) => {
             if (amount != null) {
                 if (amount === 'NoConclusion' || amount === 'Error') {

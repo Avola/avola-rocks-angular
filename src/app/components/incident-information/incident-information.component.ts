@@ -25,6 +25,7 @@ export class IncidentInformationComponent implements OnInit {
   constructor(private dataService: DataService, private avolaclient: AvolaClientService, private router: Router) { }
 
   public checkCoverage() {
+    this.dataService.checkPolicyCoverage.TravelClaimEventDate = this.dataService.travelClaimEventDate;
     this.avolaclient.checkPolicyCoverage(this.dataService.checkPolicyCoverage).subscribe((coverage) => {
       if (coverage != null) {
         if (coverage === 'Not Covered') {
