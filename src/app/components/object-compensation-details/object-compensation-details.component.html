@@ -73,7 +73,7 @@
         </div>
       </div>
       <div *ngIf="dataService.Objects[this.dataService.currentObject].CoverageAmount" class="alert alert-info" role="alert">
-        Ka-ching! You will receive: <b>{{dataService.Objects[this.dataService.currentObject].CoverageAmount}}</b> as compensation
+        Ka-ching! You will receive: <b>&#8364;{{dataService.Objects[this.dataService.currentObject].CoverageAmount}}</b> as compensation
         amount for this item.
       </div>
       <div *ngIf="errorAmountCalculation" class="alert alert-danger" role="alert">
