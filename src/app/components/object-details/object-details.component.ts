@@ -7,6 +7,7 @@ import { AvolaClientService } from '../../services/avolaclient-service';
 import { ListData, PairData } from '../../contracts/DecisionServiceVersionDescriptionDetails';
 import { LuggageClaimObjectCoverage } from '../../contracts/LuggageClaimObjectCoverage';
 import { LuggageClaimObjectCalculatedCompensationAmount } from '../../contracts/LuggageClaimObjectCalculatedCompensationAmount';
+import { CompleterService, CompleterData } from 'ng2-completer';
 
 @Component({
     selector: 'object-details',
@@ -17,12 +18,17 @@ export class ObjectDetailsComponent implements OnInit {
     notCovered = false;
     objectLocation: ListData;
     handLuggage: PairData;
+    completerDataServiceBrand: CompleterData;
+    completerDataServiceModel: CompleterData;
+    brandList: string[] = [];
+    modelList: string[] = [];
 
     ngOnInit(): void {
         this.prepareValuePairsAndLists();
+        this.completerDataServiceBrand = this.completerService.local(this.brandList);
     }
 
-    constructor(private dataService: DataService, private router: Router, private avolaclient: AvolaClientService) {
+    constructor(private dataService: DataService, private router: Router, private avolaclient: AvolaClientService, private completerService: CompleterService) {
     }
 
 
@@ -51,25 +57,42 @@ export class ObjectDetailsComponent implements OnInit {
         });
     }
 
+    public onSelected(item: any): void {
+        this.modelList = [];
+        if (item != null) {
+            this.dataService.allObjects.forEach((object) => {
+                if (object.Brand === item.title) {
+                    this.modelList.push(object.Model);
+                }
+            });
+            this.completerDataServiceModel = this.completerService.local(this.modelList);
+        }
+    }
+
     public nextObject() {
         this.notCovered = false;
         this.dataService.currentObject++;
 
         if (this.dataService.Objects.length > this.dataService.currentObject + 1) {
             this.router.navigate(['/object-details']);
-        }
-        else {
+        } else {
             this.router.navigate(['/final-amount']);
         }
     }
 
     public prepareValuePairsAndLists(): void {
-        let objectLocationId = this.dataService.mappedDatas[10].Properties.find(p => p.Name == 'ValueListId').Value;
+        const objectLocationId = this.dataService.mappedDatas[10].Properties.find(p => p.Name === 'ValueListId').Value;
         this.objectLocation = this.dataService.mappedLists[objectLocationId];
 
-        let handLuggageId = this.dataService.mappedDatas[9].Properties.find(p => p.Name == 'PairId').Value;
+        const handLuggageId = this.dataService.mappedDatas[9].Properties.find(p => p.Name === 'PairId').Value;
         this.handLuggage = this.dataService.mappedPairs[handLuggageId];
         this.dataService.listLuggageClaimObjectCoverage[this.dataService.currentObject].LuggageClaimObjectinHandLuggage = this.handLuggage.ValueForFalse;
+
+        this.dataService.allObjects.forEach((object) => {
+            if (object.Brand !== '' && this.brandList.find(b => b === object.Brand) == null) {
+                this.brandList.push(object.Brand);
+            }
+        });
     }
 }
 
