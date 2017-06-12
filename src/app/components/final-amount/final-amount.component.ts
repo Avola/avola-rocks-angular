@@ -22,7 +22,7 @@ export class FinalAmountComponent implements OnInit {
     claim() {
         this.avolaclient.checkSettlementMandate(this.dataService.travelClaimSettlementMandate).subscribe((mandate) => {
             if (mandate != null) {
-                this.dataService.finalSettlementMandate = "Flexible Mandate";
+                this.dataService.finalSettlementMandate = mandate.toString();
             }
         });
         this.claimed = true;
