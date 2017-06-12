@@ -21,7 +21,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let itemObject of dataService.Objects; let i = index">
-            <th scope="row">{{ i }}</th>
+            <th scope="row">{{ i + 1 }}</th>
             <td>{{ itemObject.LuggageClaimObject }}</td>
             <td>{{ itemObject.Brand }}</td>
             <td>{{ itemObject.Coverage }}</td>
