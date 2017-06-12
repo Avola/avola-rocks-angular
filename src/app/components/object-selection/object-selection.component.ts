@@ -6,6 +6,7 @@ import { Object } from '../../contracts/Object';
 import { ListData } from '../../contracts/DecisionServiceVersionDescriptionDetails';
 import { LuggageClaimObjectCoverage } from '../../contracts/LuggageClaimObjectCoverage';
 import { LuggageClaimObjectCalculatedCompensationAmount } from '../../contracts/LuggageClaimObjectCalculatedCompensationAmount';
+import { CompleterService, CompleterData } from 'ng2-completer';
 
 @Component({
     selector: 'object-selection',
@@ -13,35 +14,16 @@ import { LuggageClaimObjectCalculatedCompensationAmount } from '../../contracts/
 })
 export class ObjectSelectionComponent implements OnInit {
 
-    placeholder = -1;
     objectList: ListData;
+    completerDataService: CompleterData;
 
     ngOnInit(): void {
         this.prepareValueLists();
     }
 
-    constructor(private dataService: DataService, private router: Router) {
+    constructor(private dataService: DataService, private router: Router, private completerService: CompleterService) {
     }
 
-    public onChange(target: any): void {
-        const object = new Object();
-        object.LuggageClaimObject = target.value;
-
-        const luggageClaimObjectCoverage = new LuggageClaimObjectCoverage();
-        luggageClaimObjectCoverage.LuggageClaimObject = object.LuggageClaimObject;
-        luggageClaimObjectCoverage.PolicyNumber = this.dataService.selectedPolicy.PolicyNumber.toString();
-        luggageClaimObjectCoverage.LuggageClaimCause = this.dataService.LuggageClaimCause;
-        this.dataService.listLuggageClaimObjectCoverage.push(luggageClaimObjectCoverage);
-
-        const luggageClaimObjectCalculatedCompensationAmount = new LuggageClaimObjectCalculatedCompensationAmount();
-        luggageClaimObjectCalculatedCompensationAmount.PolicyNumber = this.dataService.selectedPolicy.PolicyNumber.toString();
-        luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObject = object.LuggageClaimObject;
-        luggageClaimObjectCalculatedCompensationAmount.TravelClaimEventDate = this.dataService.travelClaimEventDate;
-        this.dataService.listLuggageClaimObjectCalculatedCompensationAmount.push(luggageClaimObjectCalculatedCompensationAmount);
-
-        this.dataService.Objects.push(object);
-        target.selectedIndex = 0;
-    }
     public removeObject(item: any, index: number): void {
         this.dataService.Objects.splice(index, 1);
     }
@@ -53,6 +35,28 @@ export class ObjectSelectionComponent implements OnInit {
     public prepareValueLists(): void {
         const objectListId = this.dataService.mappedDatas[14].Properties.find(p => p.Name == 'ValueListId').Value;
         this.objectList = this.dataService.mappedLists[objectListId];
+        this.completerDataService = this.completerService.local(this.objectList.Items, 'Value', 'Value');
+    }
+
+    public onSelected(item: any): void {
+        if (item != null) {
+            const object = new Object();
+            object.LuggageClaimObject = item.title;
+
+            const luggageClaimObjectCoverage = new LuggageClaimObjectCoverage();
+            luggageClaimObjectCoverage.LuggageClaimObject = object.LuggageClaimObject;
+            luggageClaimObjectCoverage.PolicyNumber = this.dataService.selectedPolicy.PolicyNumber.toString();
+            luggageClaimObjectCoverage.LuggageClaimCause = this.dataService.LuggageClaimCause;
+            this.dataService.listLuggageClaimObjectCoverage.push(luggageClaimObjectCoverage);
+
+            const luggageClaimObjectCalculatedCompensationAmount = new LuggageClaimObjectCalculatedCompensationAmount();
+            luggageClaimObjectCalculatedCompensationAmount.PolicyNumber = this.dataService.selectedPolicy.PolicyNumber.toString();
+            luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObject = object.LuggageClaimObject;
+            luggageClaimObjectCalculatedCompensationAmount.TravelClaimEventDate = this.dataService.travelClaimEventDate;
+            this.dataService.listLuggageClaimObjectCalculatedCompensationAmount.push(luggageClaimObjectCalculatedCompensationAmount);
+
+            this.dataService.Objects.push(object);
+        }
     }
 }
 

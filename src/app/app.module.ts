@@ -15,6 +15,7 @@ import { ObjectCompensationDetailsComponent } from './components/object-compensa
 import { AdminComponent } from './components/admin/admin.component';
 import { ObjectAccordionComponent } from './components/object-accordion/object-accordion.component';
 import { FinalAmountComponent } from './components/final-amount/final-amount.component';
+import { Ng2CompleterModule } from 'ng2-completer';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { FinalAmountComponent } from './components/final-amount/final-amount.com
     FormsModule,
     HttpModule,
     NgbModule.forRoot(),
+    Ng2CompleterModule,
     RouterModule.forRoot([
       {
         path: '',
