@@ -23,19 +23,15 @@
             <strong>Oh snap!</strong> It looks like you have no policies with us.
           </div>
         </div>
-        <!--<div class="form-group row">
-          <label for="policynumber">We found the following policy number</label>
-          <input id="policynumber" type="number" disabled class="form-control" [(ngModel)]="policynumber" />
-        </div>-->
       </div>
     </div>
     <button [disabled]="dataService.selectedPolicy == null" class="btn btn-primary" (click)="setPolicy()">Provide travel information &raquo;</button>
   </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div class="text-right">
-      <button class="btn btn-link" (click)="goToAdmin()">admin &raquo;</button>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="text-right">
+        <button class="btn btn-link" (click)="goToAdmin()">admin &raquo;</button>
+      </div>
     </div>
   </div>
 </div>
