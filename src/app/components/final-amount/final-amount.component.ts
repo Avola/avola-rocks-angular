@@ -10,12 +10,25 @@ import { AvolaClientService } from '../../services/avolaclient-service';
     templateUrl: './final-amount.html'
 })
 export class FinalAmountComponent implements OnInit {
+    totalAmount: number;
 
     ngOnInit(): void {
-
+        this.calculateTotal();
     }
 
     constructor(private dataService: DataService, private router: Router, private avolaclient: AvolaClientService) {
+    }
+
+    calculateTotal() {
+        let total = 0;
+
+        this.dataService.Objects.forEach(object => {
+            if (object.CoverageAmount) {
+                total += object.CoverageAmount;
+            }
+        });
+
+        this.totalAmount = total;
     }
 
 }
