@@ -15,6 +15,7 @@
             <th>Object</th>
             <th>Brand</th>
             <th>Coverage</th>
+            <th>Mandate</th>
             <th>Compensation Amount</th>
           </tr>
         </thead>
@@ -24,6 +25,7 @@
             <td>{{ itemObject.LuggageClaimObject }}</td>
             <td>{{ itemObject.Brand }}</td>
             <td>{{ itemObject.Coverage }}</td>
+            <td>{{ itemObject.SettlementMandate }}</td>
             <td>{{ itemObject.CoverageAmount }}</td>
           </tr>
         </tbody>
@@ -32,7 +34,7 @@
     <div style="margin-top:1em;" class="col-sm-3 offset-md-9">
       <div class="card">
         <div class="card-block">
-          <h3 class="card-title">Total:&nbsp;&#8364;{{totalAmount}}</h3>
+          <h3 class="card-title">Total:&nbsp;&#8364;{{dataService.totalCalculatedCompensationAmount}}</h3>
           <a href="#" class="btn btn-primary">Claim</a>
         </div>
       </div>
