@@ -35,9 +35,17 @@ export class ObjectCompensationDetailsComponent implements OnInit {
                 if (amount === 'NoConclusion' || amount === 'Error') {
                     this.errorAmountCalculation = true;
                 } else {
+                    this.dataService.totalCalculatedCompensationAmount += Number(amount);
                     this.dataService.Objects[this.dataService.currentObject].CoverageAmount = Number(amount);
                 }
             }
+        });
+
+        this.avolaclient.checkObjectSettlementMandate(this.dataService.listLuggageClaimObjectCalculatedCompensationAmount[this.dataService.currentObject]).subscribe((mandate) => {
+            if (mandate.toString() === 'No Flexible Mandate') {
+                this.dataService.totalClaimObjectsWithoutFlexibleSettlementMandate++;
+            }
+            this.dataService.Objects[this.dataService.currentObject].SettlementMandate = mandate.toString();
         });
     }
 
@@ -45,8 +53,16 @@ export class ObjectCompensationDetailsComponent implements OnInit {
         this.dataService.currentObject++;
         if (moreItems) {
             this.router.navigate(['/object-details']);
-        }
-        else {
+        } else {
+            this.dataService.travelClaimSettlementMandate.FrissScore = this.dataService.selectedPolicy.FrissScore;
+            this.dataService.travelClaimSettlementMandate.NumberOfClaimObjectsWithoutFlexibleMandate = this.dataService.totalClaimObjectsWithoutFlexibleSettlementMandate.toString();
+            this.dataService.travelClaimSettlementMandate.TotalCalculatedComensationAmount = this.dataService.totalCalculatedCompensationAmount.toString();
+            this.dataService.travelClaimSettlementMandate.NumberOfClaimsInPast3Years = this.dataService.selectedPolicy.ClaimsPastYears.toString();
+            this.dataService.travelClaimSettlementMandate.PolicyNumber = this.dataService.selectedPolicy.PolicyNumber.toString();
+            this.avolaclient.checkSettlementMandate(this.dataService.travelClaimSettlementMandate).subscribe((mandate) => {
+                console.log('settlementMandate', mandate.toString());
+                this.dataService.finalSettlementMandate = mandate.toString();
+            });
             this.router.navigate(['/final-amount']);
         }
     }

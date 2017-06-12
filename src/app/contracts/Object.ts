@@ -5,4 +5,5 @@ export class Object {
     ClaimObjectSalesValue: number;
     Coverage: string;
     CoverageAmount: number;
+    SettlementMandate: string;
 }

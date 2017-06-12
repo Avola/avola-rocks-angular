@@ -11,6 +11,7 @@ import { CheckPolicyCoverage } from './contracts/CheckPolicyCoverage';
 import { DecisionServiceVersionDescription } from './contracts/DecisionServiceVersionDescription';
 import { LuggageClaimObjectCoverage } from './contracts/LuggageClaimObjectCoverage';
 import { LuggageClaimObjectCalculatedCompensationAmount } from './contracts/LuggageClaimObjectCalculatedCompensationAmount';
+import { TravelClaimSettlementMandate } from './contracts/TravelClaimSettlementMandate';
 import { InputData, ListData, PairData } from './contracts/DecisionServiceVersionDescriptionDetails';
 
 @Injectable()
@@ -46,6 +47,11 @@ export class DataService {
 
     public travelClaimEventDate: Date;
     public LuggageClaimCause: string;
+
+    public totalCalculatedCompensationAmount = 0;
+    public totalClaimObjectsWithoutFlexibleSettlementMandate = 0;
+    public travelClaimSettlementMandate: TravelClaimSettlementMandate = new TravelClaimSettlementMandate();
+    public finalSettlementMandate: string;
 
     public listLuggageClaimObjectCoverage: LuggageClaimObjectCoverage[] = [];
     public listLuggageClaimObjectCalculatedCompensationAmount: LuggageClaimObjectCalculatedCompensationAmount[] = [];

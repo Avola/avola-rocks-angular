@@ -39,6 +39,16 @@ export class AvolaClientService {
             .map(this.extractData);
     }
 
+    checkObjectSettlementMandate(obj: Object): Observable<Object> {
+        return this.http.post(this.baseUrl + '/Travel/checkclaimobjectmandate', obj, this.options)
+            .map(this.extractData);
+    }
+
+    checkSettlementMandate(obj: Object): Observable<Object> {
+        return this.http.post(this.baseUrl + '/Travel/checkclaimmandate', obj, this.options)
+            .map(this.extractData);
+    }
+
     getTravelPolicyCoverageDecisionVersions(): Observable<DecisionServiceVersionDescription[]> {
         return this.http.get(this.baseUrl + '/travel/listavailabledecisionservices/' + this.travelPolicyCoverageDecisionId, this.options)
             .map(this.extractData);

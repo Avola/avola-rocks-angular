@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+  font-family: "Ubuntu";
+}
 
 .btn-primary {
   color: #fff;
@@ -155,5 +158,5 @@ ngb-accordion a {
 }
 
 .av-list-selected {
-  background: #f2f9f2;
+  background: #eceeef;
 }
