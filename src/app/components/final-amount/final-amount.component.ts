@@ -10,25 +10,22 @@ import { AvolaClientService } from '../../services/avolaclient-service';
     templateUrl: './final-amount.html'
 })
 export class FinalAmountComponent implements OnInit {
-    totalAmount: number;
+    claimed: boolean = false;
 
     ngOnInit(): void {
-        this.calculateTotal();
+
     }
 
     constructor(private dataService: DataService, private router: Router, private avolaclient: AvolaClientService) {
     }
 
-    calculateTotal() {
-        let total = 0;
-
-        this.dataService.Objects.forEach(object => {
-            if (object.CoverageAmount) {
-                total += object.CoverageAmount;
+    claim() {
+        this.avolaclient.checkSettlementMandate(this.dataService.travelClaimSettlementMandate).subscribe((mandate) => {
+            if (mandate != null) {
+                this.dataService.finalSettlementMandate = "Flexible Mandate";
             }
         });
-
-        this.totalAmount = total;
+        this.claimed = true;
     }
 
 }
