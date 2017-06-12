@@ -50,6 +50,7 @@ export class ObjectCompensationDetailsComponent implements OnInit {
     }
 
     public nextDetail(moreItems: boolean): void {
+        console.log('objects', this.dataService.listLuggageClaimObjectCoverage);
         this.dataService.currentObject++;
         if (moreItems) {
             this.router.navigate(['/object-details']);
@@ -60,7 +61,6 @@ export class ObjectCompensationDetailsComponent implements OnInit {
             this.dataService.travelClaimSettlementMandate.NumberOfClaimsInPast3Years = this.dataService.selectedPolicy.ClaimsPastYears.toString();
             this.dataService.travelClaimSettlementMandate.PolicyNumber = this.dataService.selectedPolicy.PolicyNumber.toString();
             this.avolaclient.checkSettlementMandate(this.dataService.travelClaimSettlementMandate).subscribe((mandate) => {
-                console.log('settlementMandate', mandate.toString());
                 this.dataService.finalSettlementMandate = mandate.toString();
             });
             this.router.navigate(['/final-amount']);

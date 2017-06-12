@@ -29,6 +29,7 @@ export class ObjectSelectionComponent implements OnInit {
     }
 
     public gatherObjectInformation(): void {
+        console.log('items', this.dataService.listLuggageClaimObjectCoverage);
         this.router.navigate(['/object-details']);
     }
 

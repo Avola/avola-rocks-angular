@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { DataService } from '../../data.service';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { OnInit } from '@angular/core';
+import { OnDestroy } from '@angular/core';
+import { OnChanges } from '@angular/core';
 import { Object } from '../../contracts/Object';
 import { AvolaClientService } from '../../services/avolaclient-service';
 import { ListData, PairData } from '../../contracts/DecisionServiceVersionDescriptionDetails';
@@ -14,7 +16,7 @@ import { CompleterService, CompleterData } from 'ng2-completer';
     templateUrl: './object-details.component.html',
     providers: [AvolaClientService]
 })
-export class ObjectDetailsComponent implements OnInit {
+export class ObjectDetailsComponent implements OnInit, OnDestroy, OnChanges {
     notCovered = false;
     objectLocation: ListData;
     handLuggage: PairData;
@@ -26,6 +28,13 @@ export class ObjectDetailsComponent implements OnInit {
     ngOnInit(): void {
         this.prepareValuePairsAndLists();
         this.completerDataServiceBrand = this.completerService.local(this.brandList);
+    }
+
+    ngOnChanges(changes: any): void {
+        console.log("in changes", changes);
+    }
+    ngOnDestroy(): void {
+        console.log("in destroy");
     }
 
     constructor(private dataService: DataService, private router: Router, private avolaclient: AvolaClientService, private completerService: CompleterService) {
@@ -74,6 +83,7 @@ export class ObjectDetailsComponent implements OnInit {
 
         if (this.dataService.Objects.length > this.dataService.currentObject + 1) {
             this.dataService.currentObject++;
+            this.dataService.listLuggageClaimObjectCoverage[this.dataService.currentObject].LuggageClaimObjectinHandLuggage = this.handLuggage.ValueForFalse;
             this.router.navigate(['/object-details']);
         } else {
             this.router.navigate(['/final-amount']);
