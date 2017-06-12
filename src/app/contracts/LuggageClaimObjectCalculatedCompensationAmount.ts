@@ -8,4 +8,5 @@ export class LuggageClaimObjectCalculatedCompensationAmount {
     LuggageClaimObjectRepairValue: string;
     TravelNumberofInsuredPersons: string;
     TravelClaimEventDate: Date;
+    PolicyNumber: string;
 }

@@ -34,6 +34,7 @@ export class ObjectSelectionComponent implements OnInit {
         this.dataService.listLuggageClaimObjectCoverage.push(luggageClaimObjectCoverage);
 
         const luggageClaimObjectCalculatedCompensationAmount = new LuggageClaimObjectCalculatedCompensationAmount();
+        luggageClaimObjectCalculatedCompensationAmount.PolicyNumber = this.dataService.selectedPolicy.PolicyNumber.toString();
         luggageClaimObjectCalculatedCompensationAmount.LuggageClaimObject = object.LuggageClaimObject;
         luggageClaimObjectCalculatedCompensationAmount.TravelClaimEventDate = this.dataService.travelClaimEventDate;
         this.dataService.listLuggageClaimObjectCalculatedCompensationAmount.push(luggageClaimObjectCalculatedCompensationAmount);
