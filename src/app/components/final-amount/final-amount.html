@@ -7,7 +7,35 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <object-accordion></object-accordion>
+      <h2 style="margin-top:1em;margin-bottom:1em;">Your items</h2>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Object</th>
+            <th>Brand</th>
+            <th>Coverage</th>
+            <th>Compensation Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let itemObject of dataService.Objects; let i = index">
+            <th scope="row">{{ i }}</th>
+            <td>{{ itemObject.LuggageClaimObject }}</td>
+            <td>{{ itemObject.Brand }}</td>
+            <td>{{ itemObject.Coverage }}</td>
+            <td>{{ itemObject.CoverageAmount }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="margin-top:1em;" class="col-sm-3 offset-md-9">
+      <div class="card">
+        <div class="card-block">
+          <h3 class="card-title">Total:&nbsp;&#8364;{{totalAmount}}</h3>
+          <a href="#" class="btn btn-primary">Claim</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
