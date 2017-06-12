@@ -10,12 +10,22 @@ import { AvolaClientService } from '../../services/avolaclient-service';
     templateUrl: './final-amount.html'
 })
 export class FinalAmountComponent implements OnInit {
+    claimed: boolean = false;
 
     ngOnInit(): void {
 
     }
 
     constructor(private dataService: DataService, private router: Router, private avolaclient: AvolaClientService) {
+    }
+
+    claim() {
+        this.avolaclient.checkSettlementMandate(this.dataService.travelClaimSettlementMandate).subscribe((mandate) => {
+            if (mandate != null) {
+                this.dataService.finalSettlementMandate = "Flexible Mandate";
+            }
+        });
+        this.claimed = true;
     }
 
 }

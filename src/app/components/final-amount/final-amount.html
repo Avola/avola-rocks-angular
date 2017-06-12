@@ -35,7 +35,39 @@
       <div class="card">
         <div class="card-block">
           <h3 class="card-title">Total:&nbsp;&#8364;{{dataService.totalCalculatedCompensationAmount}}</h3>
-          <a href="#" class="btn btn-primary">Claim</a>
+          <button *ngIf="!claimed" class="btn btn-primary" (click)="claim()">Claim</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="claimed && dataService.finalSettlementMandate">
+    <div style="margin-top:5em;" class="col-md-12" [ngSwitch]="dataService.finalSettlementMandate">
+      <div *ngSwitchCase="'Flexible Mandate'" class="col-sm-6 offset-md-3">
+        <div class="card text-center">
+          <div class="card-header"></div>
+          <div class="card-block">
+            <h4 class="card-title">Claim handled!</h4>
+            <p class="card-text">The following amount of:<b>&nbsp;&#8364;{{dataService.totalCalculatedCompensationAmount}}</b> will be transferred
+              to your bank account.</p>
+            <img style="max-width:120px;max-height:120px;width:auto;height:auto;" src="../../assets/pigybank.png" alt="bank" />
+            <a style="margin:2em;" href="#" class="btn btn-primary">Home</a>
+          </div>
+          <div class="card-footer text-muted">
+          </div>
+        </div>
+      </div>
+      <div *ngSwitchCase="'No Flexible Mandate'" class="col-sm-4 offset-md-4">
+        not flexible
+      </div>
+      <div *ngSwitchCase="'NoConclusion'" class="col-sm-4 offset-md-4">
+        <div class="alert alert-danger" role="alert">
+          An error occurred while handling the claim, please try again later.
+        </div>
+      </div>
+      <div *ngSwitchCase="'Error'" class="col-sm-4 offset-md-4">
+        <div class="alert alert-danger" role="alert">
+          An error occurred while handling the claim, please try again later.
         </div>
       </div>
     </div>
