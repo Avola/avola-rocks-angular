@@ -73,7 +73,7 @@
         </div>
       </div>
       <div *ngIf="dataService.Objects[this.dataService.currentObject].CoverageAmount" class="alert alert-info" role="alert">
-        Ka-ching! You will receive: <b>{{dataService.Objects[this.dataService.currentObject].CoverageAmount}}</b> as compensation
+        Ka-ching! You will receive: <b>&#8364;{{dataService.Objects[this.dataService.currentObject].CoverageAmount}}</b> as compensation
         amount for this item.
       </div>
       <div *ngIf="errorAmountCalculation" class="alert alert-danger" role="alert">
@@ -81,8 +81,8 @@
       </div>
       <button *ngIf="!dataService.Objects[this.dataService.currentObject].CoverageAmount && !errorAmountCalculation" class="btn btn-primary" (click)="checkAmount()">Check Compensation &raquo;</button>
       <div *ngIf="dataService.Objects[this.dataService.currentObject].CoverageAmount || errorAmountCalculation">
-        <button *ngIf="dataService.Objects.length - 1 > dataService.currentObject" class="btn btn-primary" (click)="nextDetail(true)">Next object &raquo;</button>
-        <button *ngIf="dataService.Objects.length - 1 <= dataService.currentObject" class="btn btn-primary" (click)="nextDetail(false)">Proceed &raquo;</button>
+        <button *ngIf="dataService.Objects.length > dataService.currentObject+1" class="btn btn-primary" (click)="nextDetail(true)">Next object &raquo;</button>
+        <button *ngIf="dataService.Objects.length <= dataService.currentObject+1" class="btn btn-primary" (click)="nextDetail(false)">Proceed &raquo;</button>
       </div>
     </div>
     <div class="col-md-4">
