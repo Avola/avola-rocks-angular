@@ -28,7 +28,7 @@
 }
 
 #header {
-  background-image: url(/assets/avolaairport.png);
+  background-image: url(./assets/avolaairport.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -36,7 +36,7 @@
 }
 
 #smallheader {
-  background-image: url(/assets/avolaairportsmall.png);
+  background-image: url(./assets/avolaairportsmall.png);
   background-repeat: no-repeat;
   background-size: 200px;
   background-position: right;

@@ -226,14 +226,14 @@
 
   "FixedValues": [{
     "AccommodationPaid": "Paid",
-    "AccommodationType": "NotFixedSeasonalStand",
-    "DrivingWithoutDriversLicense": "NoDrivingWithoutDriversLicense",
-    "ForeseeableDamageorCosts": "NotForeseeable",
-    "War,RiotsorMolest": "NoWar,NoRiotsnorMolest",
+    "AccommodationType": "Not Fixed Seasonal Stand",
+    "DrivingWithoutDriversLicense": "No Driving Without Drivers License",
+    "ForeseeableDamageorCosts": "Not Foreseeable",
+    "War,RiotsorMolest": "No War, No Riots nor Molest",
     "TravelClaimPersonPresentinPolicy": "Present",
-    "CarelessUseofLuggageClaimObject": "NoCarelessUse",
-    "DamagetoLodging": "NoDamagetoLodging",
+    "CarelessUseofLuggageClaimObject": "No Careless Use",
+    "DamagetoLodging": "No Damage to Lodging",
     "InsuredPersonLiableforLuggageClaimObject": "Liable",
-    "LuggageClaimObjectSupervision": "DirectSupervision"
+    "LuggageClaimObjectSupervision": "Direct Supervision"
   }]
 }
