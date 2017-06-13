@@ -63,7 +63,7 @@ export class DataService {
     constructor(private http: Http, private avolaclient: AvolaClientService) { }
 
     public getJSON(): void {
-        this.http.get('./assets/testdata.json')
+        this.http.get('./assets/testdata.txt')
             .map((res: any) => res.json())
             .subscribe(data => this.ImportData(data));
     }
