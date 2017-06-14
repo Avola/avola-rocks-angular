@@ -31,10 +31,8 @@ export class ObjectDetailsComponent implements OnInit, OnDestroy, OnChanges {
     }
 
     ngOnChanges(changes: any): void {
-        console.log("in changes", changes);
     }
     ngOnDestroy(): void {
-        console.log("in destroy");
     }
 
     constructor(private dataService: DataService, private router: Router, private avolaclient: AvolaClientService, private completerService: CompleterService) {
