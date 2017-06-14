@@ -1,1 +1,1 @@
-export const baseUri: string = 'http://localhost:59690/api';
+export const baseUri: string = 'http://avola-rocks-aspnetcore-client.azurewebsites.net/api';
