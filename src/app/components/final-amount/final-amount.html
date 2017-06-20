@@ -72,6 +72,19 @@
           </div>
         </div>
       </div>
+      <div *ngSwitchCase="'No Amount'" class="col-sm-6 offset-md-3">
+        <div class="card text-center">
+          <div class="card-header"></div>
+          <div class="card-block">
+            <h4 class="card-title">Claim is finished.</h4>
+            <p class="card-text">The claim you submitted resulted in no compensations.</p>
+            <img style="max-width:120px;max-height:120px;width:auto;height:auto;" src="./assets/fillform.png" alt="form" />
+            <a style="margin:2em;" href="#" class="btn btn-primary">Home</a>
+          </div>
+          <div class="card-footer text-muted">
+          </div>
+        </div>
+      </div>
       <div *ngSwitchCase="'NoConclusion'" class="col-sm-4 offset-md-4">
         <div class="alert alert-danger" role="alert">
           An error occurred while handling the claim, please try again later.

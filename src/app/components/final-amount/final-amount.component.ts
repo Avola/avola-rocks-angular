@@ -10,10 +10,13 @@ import { AvolaClientService } from '../../services/avolaclient-service';
     templateUrl: './final-amount.html'
 })
 export class FinalAmountComponent implements OnInit {
-    claimed: boolean = false;
+    claimed = false;
 
     ngOnInit(): void {
-
+        if (this.dataService.totalCalculatedCompensationAmount === 0) {
+            this.dataService.finalSettlementMandate = 'No Amount';
+            this.claimed = true;
+        }
     }
 
     constructor(private dataService: DataService, private router: Router, private avolaclient: AvolaClientService) {
