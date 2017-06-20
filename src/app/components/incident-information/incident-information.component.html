@@ -44,6 +44,7 @@
           <label for="sport-practiced" class="col-12 col-form-label">{{dataService.mappedDatas[52].Question}}</label>
           <div class="col-12">
             <select class="form-control" type="url" value="" id="travel-destination-country" [(ngModel)]="dataService.checkPolicyCoverage.SportPracticed"> 
+                <option [ngValue]="">-</option>
                 <option *ngFor="let sport of sportsPracticed.Items" [ngValue]="sport.Value">{{sport.Value}}</option>
             </select>
           </div>
