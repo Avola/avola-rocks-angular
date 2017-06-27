@@ -82,6 +82,13 @@ export class ObjectDetailsComponent implements OnInit, OnDestroy, OnChanges {
         if (this.dataService.Objects.length > this.dataService.currentObject + 1) {
             this.dataService.currentObject++;
             this.dataService.listLuggageClaimObjectCoverage[this.dataService.currentObject].LuggageClaimObjectinHandLuggage = this.handLuggage.ValueForFalse;
+            this.brandList = [];
+            this.dataService.allObjects.forEach((object) => {
+                if (object.Brand !== '' && this.brandList.find(b => b === object.Brand) == null
+                    && this.dataService.listLuggageClaimObjectCoverage[this.dataService.currentObject].LuggageClaimObject === object.LuggageClaimObject) {
+                    this.brandList.push(object.Brand);
+                }
+            });
             this.router.navigate(['/object-details']);
         } else {
             this.router.navigate(['/final-amount']);
@@ -97,7 +104,8 @@ export class ObjectDetailsComponent implements OnInit, OnDestroy, OnChanges {
         this.dataService.listLuggageClaimObjectCoverage[this.dataService.currentObject].LuggageClaimObjectinHandLuggage = this.handLuggage.ValueForFalse;
 
         this.dataService.allObjects.forEach((object) => {
-            if (object.Brand !== '' && this.brandList.find(b => b === object.Brand) == null) {
+            if (object.Brand !== '' && this.brandList.find(b => b === object.Brand) == null
+                && this.dataService.listLuggageClaimObjectCoverage[this.dataService.currentObject].LuggageClaimObject === object.LuggageClaimObject) {
                 this.brandList.push(object.Brand);
             }
         });
