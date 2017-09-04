@@ -97,6 +97,24 @@
       "ClaimsPastYears": "1"
     },
     {
+      "PolicyNumber": "10111213",
+      "ClaimNumber": "",
+      "Name": "Mr. Voesten",
+      "UserName": "jordy.voesten@bizzomate.com",
+      "Password": "Avola123",
+      "Address": "Beekstraat 127 A",
+      "PostalCode": "1970",
+      "City": "Wezembeek-Oppem",
+      "Country": "Belgium",
+      "ClaimDuration": "Continuous",
+      "Status": "Found",
+      "WorldCoverage": "World Coverage",
+      "WinterSportsCoverageOption": "Not Covered",
+      "FrissScore": "Green",
+      "PremiumPaymentSituation": "Premium Payment Done",
+      "ClaimsPastYears": "1"
+    },
+    {
       "PolicyNumber": "10111214",
       "ClaimNumber": "",
       "Name": "Mr. Gelissen",
